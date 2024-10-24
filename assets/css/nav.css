@@ -1,0 +1,120 @@
+ /* Style the navigation bar */
+ .nav {
+	width: 100%;
+	/* height: 150px; */
+	/* background-color: #3e2a2a; */
+	overflow: auto;
+	display: flex;
+	align-items: center;
+	/* padding: 20px 10px; */
+	margin: 0;
+	padding: 0;
+	
+  }
+
+  .nav .logo {
+	/* background-color: #fff; */
+	padding: 0;
+	flex: 50%;
+  }
+
+  .nav .logo a {
+	display: inline-block;
+	width: 10%;
+	margin: 0;
+	padding: 0;
+  }
+  
+  .nav .logo a img {
+	/* background-color: aqua; */
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+  }
+
+  .nav .links-container{
+	/* margin-right: 30px; */
+	flex: 50%;		
+	
+	margin: 0;
+	padding: 0;
+	/* background-color:blue; */
+	/* padding: 20px 0; */
+	/* padding-left: 25%; */
+	/* border-radius: 50px; */
+	/* float: right; */
+	/* text-align: center; */
+
+  }
+  .nav .links-container .links{
+	list-style-type: none;
+	width: 40%;
+	/* display: inline-block; */
+	margin: 0;
+	margin-right: 50px;
+	float: right;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-radius: 15px;
+	background-color: #ffffff;
+	opacity: .4;
+	text-align: center;
+  }
+
+  .nav .links-container .links li {
+	/* margin-left: 25%; */
+	
+	/* float: left; */
+	width: 100%;
+	/* height: 80%; */
+	border-right: 3px solid #000;
+	/* margin: 10px 0; */
+	/* text-align: center; */
+	/* background-color:aqua; */
+}
+
+.nav .links-container .links li:last-child {
+	border-right: 0;
+}
+  
+  /* nav links */
+  .nav .links-container .links li a {
+	/* float: left; */
+	/* text-align: center; */
+	/* color: rgb(0, 0, 0); */
+	text-decoration: none;
+	font-size: 17px;
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	/* background-color: rgb(186, 45, 108); */
+	padding: 12px;	
+}
+
+.nav .links-container .links li a img {
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 60px;
+	height: 60px;
+  }
+  
+  /* nav links on mouse-over */
+  .nav .links-container .links li a:hover {
+	background-color: #000;
+  }
+
+  /* Current/active nav link */
+  .active {
+	/* background-color: #04AA6D; */
+  }
+
+  /* Add responsiveness - will automatically display the nav vertically instead of horizontally on screens less than 500 pixels */
+  @media screen and (max-width: 500px) {
+	.nav a {
+	  float: none;
+	  display: block;
+	}
+  } 

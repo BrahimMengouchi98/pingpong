@@ -1,0 +1,22 @@
+<svg width="362" height="508" xmlns="http://www.w3.org/2000/svg" fill="none">
+ <mask height="508" width="362" y="0" x="0" maskUnits="userSpaceOnUse" id="mask0_119_1355">
+  <path id="svg_1" fill="white" d="m361.246,0.79767l-360.92288,0l0,506.81333l360.92288,0l0,-506.81333z"/>
+ </mask>
+
+ <g>
+  <title>Layer 1</title>
+  <g opacity="0.8" id="svg_2" mask="url(#mask0_119_1355)">
+   <mask height="505" width="360" y="2" x="1" maskUnits="userSpaceOnUse" id="mask1_119_1355">
+    <path id="svg_3" fill="white" d="m1.62244,2.7392l359.11256,0l0,503.9008l-359.11256,0l0,-503.9008z"/>
+   </mask>
+   <g id="svg_4" mask="url(#mask1_119_1355)">
+    <mask height="505" width="360" y="2" x="1" maskUnits="userSpaceOnUse" id="mask2_119_1355">
+     <path id="svg_5" fill="white" d="m36.2261,2.7392l289.8979,0c19.116,0 34.611,17.1373 34.611,38.28l0,427.1118c0,21.142 -15.495,38.28 -34.611,38.28l-289.8979,0c-19.1091,0 -34.60366,-17.138 -34.60366,-38.28l0,-427.1118c0,-21.1427 15.49456,-38.28 34.60366,-38.28z"/>
+    </mask>
+    <g id="svg_6" mask="url(#mask2_119_1355)">
+     <path id="svg_7" fill="white" d="m1.62244,3.7392l359.11256,0l0,504.2448l-359.11256,0l0,-504.2448z"/>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>
