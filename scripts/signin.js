@@ -3,8 +3,6 @@ const inactive = document.querySelector('.inactive');
 const form1 = document.querySelector('.show');
 const form2 = document.querySelector('.hidden');
 
-let access = false;
-
 inactive.addEventListener('click', ()=> {
 	inactive.classList.replace('inactive', 'active');
 	active.classList.replace('active', 'inactive');
