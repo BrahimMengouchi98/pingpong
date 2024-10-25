@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<svg width="24" height="15" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <mask height="15" id="mask0_240_1674" maskUnits="userSpaceOnUse" width="24" x="0" y="0">
+  <path d="m23.27,0.03l-22.67,0l0,14.67l22.67,0l0,-14.67z" fill="white" id="svg_1"/>
+ </mask>
+
+ <g class="layer">
+  <title>Layer 1</title>
+  <g id="svg_2" mask="url(#mask0_240_1674)" transform="rotate(179.567, 11.6512, 7.33)">
+   <mask height="14" id="mask1_240_1674" maskUnits="userSpaceOnUse" width="23" x="0" y="0">
+    <path d="m0.79,0.95l21.72,0l0,12.98l-21.72,0l0,-12.98z" fill="white" id="svg_3"/>
+   </mask>
+   <g id="svg_4" mask="url(#mask1_240_1674)">
+    <path d="m10.17,1.55l-8.6,8.6c-0.81,0.82 -0.81,2.14 0,2.96c0.82,0.81 2.14,0.81 2.96,0l7.12,-7.12l7.12,7.12c0.82,0.81 2.14,0.81 2.96,0c0.39,-0.4 0.61,-0.92 0.61,-1.48c0,-0.56 -0.22,-1.08 -0.61,-1.48l-8.6,-8.6c-0.82,-0.81 -2.14,-0.81 -2.96,0z" fill="#32076C" id="svg_5"/>
+   </g>
+  </g>
+ </g>
+</svg>

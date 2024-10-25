@@ -27,4 +27,23 @@
 		// form2.classList.replace('show', 'hidden');
 	})
 
+	const select = document.querySelectorAll('.select-box');
+	select.forEach(ele => {
+		ele.addEventListener('click', () => {
+			if (ele.classList.contains('close'))
+			{
+				ele.classList.replace('close', 'open');
+				ele.children[0].children[2].setAttribute('src', '../assets/imgs/sidebar/down-arrow.svg');
+				ele.nextSibling.nextSibling.style.display = 'block';
+			}
+			else
+			{
+				ele.classList.replace('open', 'close');
+				ele.children[0].children[2].setAttribute('src', '../assets/imgs/sidebar/arrow.svg');
+				ele.nextSibling.nextSibling.style.display = 'none';
+			}
+			console.log(ele);
+		})
+	})
+
   })(this);
