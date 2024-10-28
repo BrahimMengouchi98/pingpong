@@ -74,7 +74,7 @@
 	color: #837998;
 	/* display: inline-block; */
 	position: absolute;
-	width: 460px;
+	/* width: 460px; */
 	top: 50%;
 	left: calc(50% - 230px);
 	letter-spacing: 5px;
@@ -82,12 +82,19 @@
 }
 
 /* input message */
-.chat-container .input-msg {
+.chat-container .input-msg, .chat-container .input-msg2 {
 	background: linear-gradient(to right, #5033a0, #3f6797);
 	height: 8%;
 	position: relative;
-	/* padding: 15px 0 0; */
 	background-color: #11998e;
+}
+
+.chat-container .input-msg2 {
+	padding: 15px 0 0;
+}
+
+.chat-container .input-msg2{
+	display: none;
 }
 
 .chat-container .input-msg span{
@@ -106,7 +113,7 @@
 	cursor:not-allowed;
 }
 
-.chat-container .input-msg .form-field{
+.chat-container .input-msg2 .form-field{
 	font-family: 'Poppins', sans-serif; 
 	width: 100%;
 	height: 100%;
@@ -120,17 +127,17 @@
 	transition: border-color 0.2s;
 }
 
-.chat-container .input-msg .form-field::placeholder{
+.chat-container .input-msg2 .form-field::placeholder{
 	color: transparent;
 }
 
-.chat-container .input-msg .form-field:placeholder-shown ~ .form-label{
+.chat-container .input-msg2 .form-field:placeholder-shown ~ .form-label{
 	font-size: 1.3rem;
     cursor: text;
     top: 20px;
 }
 
-.chat-container .input-msg .form-label{
+.chat-container .input-msg2 .form-label{
 	position: absolute;
 	top: 0;
 	display: block;
@@ -139,7 +146,7 @@
 	color: var(--gray);
 }
 
-.chat-container .input-msg .form-field:focus{
+.chat-container .input-msg2 .form-field:focus{
 	padding-bottom: 6px;
 	font-weight: 700;
 	border-width: 3px;
@@ -147,7 +154,7 @@
 	border-image-slice: 1;
 }
 
-.chat-container .input-msg .form-field:focus ~ .form-label {
+.chat-container .input-msg2 .form-field:focus ~ .form-label {
 	position: absolute;
 	top: 0;
 	display: block;

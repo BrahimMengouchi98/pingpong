@@ -8,10 +8,10 @@
 	//   });
 	// }
 	// console.log(sidebar);
-	const active = document.querySelector('.active');
-	const inactive = document.querySelector('.inactive');
-	const friends = document.querySelector('.show');
-	const channels = document.querySelector('.hidden');
+	const active = document.querySelector('.sidebar .nav .links .active');
+	const inactive = document.querySelector('.sidebar .nav .links .inactive');
+	const friends = document.querySelector('.sidebar .show');
+	const channels = document.querySelector('.sidebar .hidden');
 
 	inactive.addEventListener('click', ()=> {
 		inactive.classList.replace('inactive', 'active');
@@ -33,7 +33,7 @@
 		confirm('hello:');
 	})
 
-	const select = document.querySelectorAll('.select-box');
+	const select = document.querySelectorAll('.sidebar .friends .nav .select-box');
 	select.forEach(ele => {
 		ele.addEventListener('click', () => {
 			if (ele.classList.contains('close'))

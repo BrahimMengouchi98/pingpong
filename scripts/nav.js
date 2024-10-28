@@ -70,6 +70,48 @@ function loadComponent(componentName) {
 	})
   }
   
+
+  function loadComponent2(componentName, nickname) {
+	// Remove any existing component
+	const existingComponent = container.querySelector('game-component, sign-component, chat-component');
+	if (existingComponent) {
+	  existingComponent.remove();
+	}
+  
+	// Create a new component based on the componentName
+	let newComponent;
+	let containerName;
+	switch (componentName) {
+	    case 'game':
+			newComponent = document.createElement('game-component');
+			break;
+		case 'chat':
+			newComponent = document.createElement('chat-component');
+			containerName = ".chat-container";
+		break;
+		default:
+		return;
+	}
+  
+	// Append the new component to the container
+	container.appendChild(newComponent);
+	newComponent.addEventListener('content-loaded', () => {
+		// Access the HTML inside the component
+		const chat = newComponent.querySelector(containerName);
+		const friend_name = newComponent.children[0].children[0].children[0];
+		const input1 = friend_name.parentElement.nextElementSibling.nextElementSibling;
+		const input2 = friend_name.parentElement.nextElementSibling.nextElementSibling.nextElementSibling;
+		friend_name.innerHTML = nickname;
+		input1.style.display = 'none';
+		input2.style.display = 'block';
+		input2.children[1].innerHTML = 'Messaging ' + nickname;
+		// console.log(chat);
+		//console.log(sidebar); // This will log the <div class="sidebar"> element
+		chat.classList.add('active');
+	})
+  }
+
+
   // Listen for popstate events to handle back/forward navigation
 window.addEventListener('popstate', (event) => {
 	const componentName = event.state ? event.state.page : null;
