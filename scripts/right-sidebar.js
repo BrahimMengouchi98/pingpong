@@ -1,13 +1,12 @@
 (function initializeSidebarComponent(component) {
-	const sidebar = component.querySelector('.sidebar');
-  
+	const sidebar = component.querySelector('.sidebar-right');
 	// if (sidebar) {
 	//   sidebar.addEventListener("mouseleave", () => {
 	// 	sidebar.classList.toggle('hover');
 	// 	sidebar.classList.toggle('leave');
 	//   });
 	// }
-	// console.log(sidebar);
+	console.log(component.parent.locat);
 	const active = document.querySelector('.active');
 	const inactive = document.querySelector('.inactive');
 	const friends = document.querySelector('.show');

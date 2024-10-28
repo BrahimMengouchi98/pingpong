@@ -1,5 +1,5 @@
- /* Style the navigation bar */
- .nav {
+ /* Style the navbarigation bar */
+ .navbar {
 	width: 100%;
 	/* height: 150px; */
 	/* background-color: #3e2a2a; */
@@ -12,20 +12,20 @@
 	
   }
 
-  .nav .logo {
+  .navbar .logo {
 	/* background-color: #fff; */
 	padding: 0;
 	flex: 50%;
   }
 
-  .nav .logo a {
+  .navbar .logo a {
 	display: inline-block;
 	width: 10%;
 	margin: 0;
 	padding: 0;
   }
   
-  .nav .logo a img {
+  .navbar .logo a img {
 	/* background-color: aqua; */
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -33,7 +33,7 @@
 	height: 100%;
   }
 
-  .nav .links-container{
+  .navbar .links-container{
 	/* margin-right: 30px; */
 	flex: 50%;		
 	
@@ -47,7 +47,7 @@
 	/* text-align: center; */
 
   }
-  .nav .links-container .links{
+  .navbar .links-container .links{
 	list-style-type: none;
 	width: 40%;
 	/* display: inline-block; */
@@ -63,7 +63,7 @@
 	text-align: center;
   }
 
-  .nav .links-container .links li {
+  .navbar .links-container .links li {
 	/* margin-left: 25%; */
 	
 	/* float: left; */
@@ -75,12 +75,12 @@
 	/* background-color:aqua; */
 }
 
-.nav .links-container .links li:last-child {
+.navbar .links-container .links li:last-child {
 	border-right: 0;
 }
   
-  /* nav links */
-  .nav .links-container .links li a {
+  /* navbar links */
+  .navbar .links-container .links li a {
 	/* float: left; */
 	/* text-align: center; */
 	/* color: rgb(0, 0, 0); */
@@ -94,26 +94,26 @@
 	padding: 12px;	
 }
 
-.nav .links-container .links li a img {
+.navbar .links-container .links li a img {
 	background-repeat: no-repeat;
 	background-size: cover;
 	width: 60px;
 	height: 60px;
   }
   
-  /* nav links on mouse-over */
-  .nav .links-container .links li a:hover {
+  /* navbar links on mouse-over */
+  .navbar .links-container .links li a:hover {
 	background-color: #000;
   }
 
-  /* Current/active nav link */
+  /* Current/active navbar link */
   .active {
 	/* background-color: #04AA6D; */
   }
 
-  /* Add responsiveness - will automatically display the nav vertically instead of horizontally on screens less than 500 pixels */
+  /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
   @media screen and (max-width: 500px) {
-	.nav a {
+	.navbar a {
 	  float: none;
 	  display: block;
 	}

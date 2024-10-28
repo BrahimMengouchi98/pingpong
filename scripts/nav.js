@@ -1,10 +1,14 @@
-const links = document.querySelectorAll('a');
+const links = document.querySelectorAll('.navbar .links-container a');
 const container = document.querySelector('.container');
-
 
 links.forEach(element => {
 	element.addEventListener('click', (event) => {
-		
+		const active = document.querySelector('.navbar .links-container a.active');
+		// console.log(element);
+		// if (element.classList.contains('active'))
+		// 	element.classList.remove('active');
+		active.classList.remove('active');
+		element.classList.add('active');
 		// Prevent the default link behavior
 		event.preventDefault(); 
 
@@ -18,6 +22,16 @@ links.forEach(element => {
 			// Load the game component
 			loadComponent('game');
 		  }
+		  else if (element.parentElement.getAttribute('class') === 'chat') {
+			// Check if the clicked link is the "Game" link  
+			console.log('Chat component will be added');
+			  
+			  // Change the URL to /game without reloading the page
+			//   history.pushState({ page: 'chat' }, 'Chat', '/chat');
+  
+			  // Load the game component
+			  loadComponent('chat');
+			}
 	})
 });
 
@@ -25,30 +39,35 @@ links.forEach(element => {
 // Function to load the specified component
 function loadComponent(componentName) {
 	// Remove any existing component
-	const existingComponent = container.querySelector('game-component, sign-component, home-component');
+	const existingComponent = container.querySelector('game-component, sign-component, chat-component');
 	if (existingComponent) {
 	  existingComponent.remove();
 	}
   
 	// Create a new component based on the componentName
 	let newComponent;
+	let containerName;
 	switch (componentName) {
-	  case 'game':
-		newComponent = document.createElement('game-component');
+	    case 'game':
+			newComponent = document.createElement('game-component');
+			break;
+		case 'chat':
+			newComponent = document.createElement('chat-component');
+			containerName = ".chat-container";
 		break;
-	  // Add more cases here if you want to handle other components
-	  // case 'sign':
-	  //   newComponent = document.createElement('sign-component');
-	  //   break;
-	  // case 'home':
-	  //   newComponent = document.createElement('home-component');
-	  //   break;
-	  default:
-		return; // If no valid component is found, do nothing
+		default:
+		return;
 	}
   
 	// Append the new component to the container
 	container.appendChild(newComponent);
+	newComponent.addEventListener('content-loaded', () => {
+		// Access the HTML inside the component
+		console.log(containerName);
+		const chat = newComponent.querySelector(containerName);
+		//console.log(sidebar); // This will log the <div class="sidebar"> element
+		chat.classList.add('active');
+	})
   }
   
   // Listen for popstate events to handle back/forward navigation
