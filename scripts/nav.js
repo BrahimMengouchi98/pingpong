@@ -63,19 +63,20 @@ function loadComponent(componentName) {
 	container.appendChild(newComponent);
 	newComponent.addEventListener('content-loaded', () => {
 		// Access the HTML inside the component
-		console.log(containerName);
+		//console.log(containerName);
 		const chat = newComponent.querySelector(containerName);
 		//console.log(sidebar); // This will log the <div class="sidebar"> element
 		chat.classList.add('active');
 	})
   }
   
-
+//   let components = ['']
   function loadComponent2(componentName, nickname) {
+	
 	// Remove any existing component
 	const existingComponent = container.querySelector('game-component, sign-component, chat-component');
 	if (existingComponent) {
-	  existingComponent.remove();
+	//   existingComponent.remove();
 	}
   
 	// Create a new component based on the componentName
@@ -86,30 +87,44 @@ function loadComponent(componentName) {
 			newComponent = document.createElement('game-component');
 			break;
 		case 'chat':
-			newComponent = document.createElement('chat-component');
 			containerName = ".chat-container";
+			if (!existingComponent)
+			{
+				newComponent = document.createElement('chat-component');
+			}
+			else
+			{
+				newComponent = document.getElementsByTagName('chat-component')[0];
+				loadChat(newComponent, containerName, nickname);
+			}
+			
 		break;
 		default:
 		return;
 	}
   
 	// Append the new component to the container
-	container.appendChild(newComponent);
-	newComponent.addEventListener('content-loaded', () => {
-		// Access the HTML inside the component
-		const chat = newComponent.querySelector(containerName);
-		const friend_name = newComponent.children[0].children[0].children[0];
-		const input1 = friend_name.parentElement.nextElementSibling.nextElementSibling;
-		const input2 = friend_name.parentElement.nextElementSibling.nextElementSibling.nextElementSibling;
-		friend_name.innerHTML = nickname;
-		input1.style.display = 'none';
-		input2.style.display = 'block';
-		input2.children[1].innerHTML = 'Messaging ' + nickname;
-		// console.log(chat);
-		//console.log(sidebar); // This will log the <div class="sidebar"> element
-		chat.classList.add('active');
+	if (!existingComponent)
+		container.appendChild(newComponent);
+		newComponent.addEventListener('content-loaded', () => {
+		loadChat(newComponent, containerName, nickname);
 	})
   }
+  
+
+  function loadChat(newComponent, containerName, nickname) {
+	// Access the HTML inside the component
+	const chat = newComponent.querySelector(containerName);
+	const friend_name = newComponent.children[0].children[0].children[0];
+	const input1 = friend_name.parentElement.nextElementSibling.nextElementSibling;
+	const input2 = friend_name.parentElement.nextElementSibling.nextElementSibling.nextElementSibling;
+	friend_name.innerHTML = nickname;
+	input1.style.display = 'none';
+	input2.style.display = 'block';
+	input2.children[1].innerHTML = 'Messaging ' + nickname;
+	if (!chat.classList.contains('active'))
+		chat.classList.add('active');
+}
 
 
   // Listen for popstate events to handle back/forward navigation

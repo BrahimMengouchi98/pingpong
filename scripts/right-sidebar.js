@@ -53,12 +53,41 @@
 
 //   })(this);
 
-const friends = document.querySelectorAll('.sidebar-right .friends .nav .drop-down .select-box .profile');
+// part 2
+// const friends = document.querySelectorAll('.sidebar-right .friends .nav .drop-down .select-box .profile');
 
-friends.forEach(ele => {
-	ele.addEventListener('click', () => {
-		// const nickname = document.querySelector('.sidebar-right .friends .profile a span.nickname');
-		const nickname = ele.children[0].children[1];
-		loadComponent2('chat', nickname.textContent);
+// friends.forEach(ele => {
+// 	ele.addEventListener('click', () => {
+// 		// const nickname = document.querySelector('.sidebar-right .friends .profile a span.nickname');
+// 		const nickname = ele.children[0].children[1];
+// 		loadComponent2('chat', nickname.textContent);
+// 	})
+// })
+
+// part 3
+
+(function initializeSidebarComponent(component) {
+	const sidebar = component.querySelector('.sidebar-right');
+	
+	const friends = component.querySelectorAll('.sidebar-right .friends .nav .drop-down .select-box .profile');
+	friends.forEach(ele => {
+		ele.addEventListener('click', () => {
+			// console.log(ele);
+			// const nickname = document.querySelector('.sidebar-right .friends .profile a span.nickname');
+			const nickname = ele.children[0].children[1];
+			loadComponent2('chat', nickname.textContent);
+
+			if (nickname) {
+				// Dispatch the 'friend-selected' event with the nickname as detail
+				// component.dispatchEvent(new CustomEvent('friend-selected', {
+				// 	detail: { nickname },
+				// 	bubbles: true,
+				// 	composed: true
+				// }));
+				
+			}
+
+		})
 	})
-})
+
+  })(this);

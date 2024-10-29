@@ -1,20 +1,18 @@
-class RightSideBar extends HTMLElement {
+class AddFriend extends HTMLElement {
 	constructor() {
 	  super();
-	  // Attach shadow root
-	//   this.attachShadow({ mode: 'open' });
 	}
 	async connectedCallback() {
 		// Fetch HTML
-		const htmlResponse = await fetch('../views/right-sidebar.html');
+		const htmlResponse = await fetch('../views/add-friend.html');
 		const htmlContent = await htmlResponse.text();
 	
 		// Fetch CSS
-		const cssResponse = await fetch('../assets/css/right-sidebar.css');
+		const cssResponse = await fetch('../assets/css/add-friend.css');
 		const cssContent = await cssResponse.text();
 
 		// Fetch JavaScript
-		const jsResponse = await fetch('../scripts/right-sidebar.js');
+		const jsResponse = await fetch('../scripts/add-friend.js');
 		const jsContent = await jsResponse.text();
 	
 		// Append CSS to the shadow DOM
@@ -28,18 +26,15 @@ class RightSideBar extends HTMLElement {
 		// Set inner HTML
 		this.innerHTML = htmlContent;
 		this.appendChild(style);
-		// this.appendChild(script);
+		this.appendChild(script);
 
 		// Execute the JavaScript in the context of the component
-		const scriptFunction = new Function(jsContent).bind(this);
-		scriptFunction();
+		// const scriptFunction = new Function(jsContent).bind(this);
+		// scriptFunction();
 
-		// Dispatch an event to notify that the content is ready
-		//this.dispatchEvent(new CustomEvent('content-loaded', { bubbles: true, composed: true }));
-		
-
-
+		// // Dispatch an event to notify that the content is ready
+		// this.dispatchEvent(new CustomEvent('content-loaded', { bubbles: true, composed: true }));
 	  }
   }
-  customElements.define('right-sidebar-component', RightSideBar);
+  customElements.define('add-friend-component', AddFriend);
   
