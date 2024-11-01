@@ -27,7 +27,7 @@ links.forEach(element => {
 			console.log('Chat component will be added');
 			  
 			  // Change the URL to /game without reloading the page
-			//   history.pushState({ page: 'chat' }, 'Chat', '/chat');
+			history.pushState({ page: 'chat' }, 'Chat', '/chat');
   
 			  // Load the game component
 			  loadComponent('chat');
