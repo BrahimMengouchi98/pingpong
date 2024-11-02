@@ -118,7 +118,9 @@ function loadComponent(componentName) {
 	const input1 = friend_name.parentElement.nextElementSibling.nextElementSibling;
 	const input2 = friend_name.parentElement.nextElementSibling.nextElementSibling.nextElementSibling;
 	friend_name.innerHTML = nickname;
-	friend_name.parentElement.nextElementSibling.children[0].remove();
+	select_friend = friend_name.parentElement.nextElementSibling.children[0];
+	if (select_friend)
+		select_friend.remove();
 	input1.style.display = 'none';
 	input2.style.display = 'block';
 	input2.children[1].innerHTML = 'Messaging ' + nickname;

@@ -52,13 +52,18 @@
 
 			const messageDate = document.createElement('span');
 			messageDate.classList.add('date');
-			messageDate.innerHTML = Date.now();
+			
+			const date = new Date();
+
+			// Check whether AM or PM
+			let hours = date.getHours();
+			let minues = date.getMinutes();
+			let am_pm = hours >= 12 ? 'PM' : 'AM';
+			messageDate.innerHTML = hours + ":" + minues + " " + am_pm;
 
 			content2.appendChild(messageDate);
 			
 			content1.appendChild(content2);
-
-			// console.log(msgContainer);
 
 			input.value = "";
 		}
