@@ -67,7 +67,7 @@
 // part 3
 
 (function initializeSidebarComponent(component) {
-	const sidebar = component.querySelector('.sidebar-right');
+	//const sidebar = component.querySelector('.sidebar-right');
 	
 	const friends = component.querySelectorAll('.sidebar-right .friends .nav .drop-down .select-box .profile');
 	friends.forEach(ele => {

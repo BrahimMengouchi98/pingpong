@@ -139,7 +139,7 @@
 	  const li = e.target.closest('li.select-box .actions a.second');
 	  if (li) {
 		//   console.log("Hello");
-		  console.log(li);
+		  console.log(li);		
 		  //const nickname = li.parentElement.previousElementSibling.children[0].children[1].textContent;
 		  li.parentElement.parentElement.remove()
 		  //buildBlockedList(nickname);  

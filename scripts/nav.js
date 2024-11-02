@@ -110,8 +110,7 @@ function loadComponent(componentName) {
 		loadChat(newComponent, containerName, nickname);
 	})
   }
-  
-
+  	
   function loadChat(newComponent, containerName, nickname) {
 	// Access the HTML inside the component
 	const chat = newComponent.querySelector(containerName);
@@ -119,6 +118,7 @@ function loadComponent(componentName) {
 	const input1 = friend_name.parentElement.nextElementSibling.nextElementSibling;
 	const input2 = friend_name.parentElement.nextElementSibling.nextElementSibling.nextElementSibling;
 	friend_name.innerHTML = nickname;
+	friend_name.parentElement.nextElementSibling.children[0].remove();
 	input1.style.display = 'none';
 	input2.style.display = 'block';
 	input2.children[1].innerHTML = 'Messaging ' + nickname;
