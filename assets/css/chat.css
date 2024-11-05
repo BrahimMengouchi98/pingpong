@@ -1,3 +1,22 @@
+::-webkit-scrollbar {
+	width: 6px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+	/* background: #aa5656; */
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+	background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+	background: #555;
+  }
+
 :root{
 	--primary: #11998e;
 	--secondary: #38ef7d;
@@ -68,6 +87,7 @@
 	height: 82%;
 	position: relative;
 	background-color: #15023c;
+	overflow: auto;
 }
 
 .chat-container .body-msg .first-msg {

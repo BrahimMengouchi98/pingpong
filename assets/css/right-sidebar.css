@@ -156,28 +156,29 @@
   }
   
   .sidebar-right .friends .nav .drop-down .profile{
-	  flex: 1;
+	  flex: 75%;
 	  /* background-color: #ae528e; */
   
   }
 
   .sidebar-right .friends .nav .drop-down .profile a {
 	  display: flex;
-	  justify-content: center;
+	  justify-content: space-evenly;
 	  align-items: center;
 	  /* background-color: #fff; */
   }
   
-  .sidebar-right .friends .nav .drop-down .profile a:hover {
+  .sidebar-right .friends .nav .drop-down .profile a img:hover,
+  .sidebar-right .friends .nav .drop-down .profile a span:hover {
 	  cursor: pointer;
   }
   
   
   .sidebar-right .friends .nav .drop-down .profile a img {
 	  border-radius: 50%;
-	  width: 30%;
+	  width: 20%;
 	  height: 100%;
-	  margin: 0 5px;
+	  /* margin: 0 5px; */
   }
   
   .sidebar-right .friends .nav .drop-down .profile a span {
@@ -186,7 +187,7 @@
   }
   
   .sidebar-right .friends .nav .drop-down .actions {
-	  flex: 1;
+	  flex: 25%;
 	  /* background-color: #6c2121; */
 	  display: flex;
 	  align-items:center;
@@ -207,7 +208,7 @@
 	  height: 100%;
   } */
   
-  .sidebar-right .friends .nav .drop-down .actions a:hover{
+  .sidebar-right .friends .nav .drop-down .actions a i:hover{
 	  cursor: pointer;
   }
   

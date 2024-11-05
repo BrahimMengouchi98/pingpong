@@ -34,7 +34,7 @@
 		loadComponent("add-channel");
 	})
 
-	const select = document.querySelectorAll('.sidebar .friends .nav > .select-box');
+	const select = document.querySelectorAll('.sidebar .friends .nav > .select-box, .sidebar .channels .nav > .select-box');
 	select.forEach(ele => {
 		ele.addEventListener('click', () => {
 			if (ele.classList.contains('close'))
@@ -100,12 +100,17 @@
 			const input = newComponent.querySelector(`${containerName} .input-msg input`);
 			// click add button
 			const add = newComponent.querySelector(`${containerName} .actions .add`);
+			
 			add.addEventListener('click', ()=>{
 				// add friend name to invite list
 				console.log(input.value);
-				buildInviteList(input.value);
+				if (containerName == ".add-friend-container")
+					buildInviteList(input.value);
+				else
+					buildChannelsList(input.value);
 				newComponent.remove();
 			})
+			
 			// click cancel button 
 			const cancel  = newComponent.querySelector(`${containerName} .actions .cancel`);
 			cancel.addEventListener('click', ()=>{
@@ -121,7 +126,7 @@
 	    blockBtnFriend.addEventListener('click', (e) =>{
 		//   console.log(blockBtnFriend);
 		// Check if the clicked element is an 'li' with the 'select-box' class
-	  const li = e.target.closest('li.select-box .actions a.first');
+	  const li = e.target.closest('li.select-box .actions a.first i');
 	  if (li) {
 		//   console.log("Hello");
 		  console.log(li);
@@ -136,7 +141,7 @@
 	  unfriendBtnFriend.addEventListener('click', (e) =>{
 		//   console.log(blockBtnFriend);
 		// Check if the clicked element is an 'li' with the 'select-box' class
-	  const li = e.target.closest('li.select-box .actions a.second');
+	  const li = e.target.closest('li.select-box .actions a.second i');
 	  if (li) {
 		//   console.log("Hello");
 		  console.log(li);		
@@ -146,13 +151,32 @@
 	  }
 	  })
 
+	  // when click on accept button that exist in pending list
+	  const acceptBtnFriend =  document.querySelector('.sidebar .friends .nav .drop-down.pending');
+	  acceptBtnFriend.addEventListener('click', (e) =>{
+		//   console.log(blockBtnFriend);
+		// Check if the clicked element is an 'li' with the 'select-box' class
+		const li = e.target.closest('li.select-box .actions a.first i');
+		const li2 = e.target.closest('li.select-box .actions a.second i');
+		if (li) {
+			//   console.log("Hello");
+			
+			console.log(li);
+			const nickname = li.parentElement.previousElementSibling.children[0].children[1].textContent;
+			li.parentElement.parentElement.remove();
+			buildFriendList(nickname);
+		}
+		if (li2) {
+			li2.parentElement.parentElement.remove();
+		}
+	  })
 
 	  // when click on deblock button that exist in blocked list
 		const reblockBtnFriend =  document.querySelector('.sidebar .friends .nav .drop-down.blocked');
 	    reblockBtnFriend.addEventListener('click', (e) =>{
 		//   console.log(blockBtnFriend);
 		// Check if the clicked element is an 'li' with the 'select-box' class
-	  const li = e.target.closest('li.select-box .actions a');
+	  const li = e.target.closest('li.select-box .actions a i');
 	  if (li) {
 		//   console.log("Hello");
 		
@@ -331,15 +355,103 @@
 	  // console.log(invitedFriends);
   }
 
+  // build channels list
+  // build an invited list
+  function buildChannelsList(channelName)
+  {
+	const invitedFriends = document.querySelector('.sidebar .channels .nav .drop-down.my-channels');
+	const list = document.createElement('li');
+	
+	list.classList.add('select-box');
+	list.classList.add('close');
+	
+	const profile = document.createElement('div');
+	profile.classList.add('profile');
+
+	const a = document.createElement('a');
+
+	const img = document.createElement('img');
+	img.src = "../assets/imgs/sidebar/profile.jpg";
+
+	const span = document.createElement('span');
+	span.classList.add('nickname');
+	span.textContent = channelName;
+
+	// append img and span to a
+	a.appendChild(img);
+	a.appendChild(span);
+	
+	// append a to profile
+	profile.appendChild(a);
+
+	const actions = document.createElement('div');
+	actions.classList.add('actions');
+	
+	const a2 = document.createElement('a');
+
+	const i = document.createElement('i');
+	i.classList.add('fa-solid');
+	i.classList.add('fa-gear');
+
+	// append i to i
+	a2.appendChild(i);
+
+	// append a to actions div
+	actions.appendChild(a2);
+
+	list.appendChild(profile);
+	list.appendChild(actions);
+
+	// append li to ul
+	invitedFriends.appendChild(list);
+	// console.log(invitedFriends);
+}
+
 	// when click on cancel btn in invited friends
 	const cancelBtnInvited =  document.querySelector('.sidebar .friends .nav .drop-down.invited');
 	cancelBtnInvited.addEventListener('click', (e) =>{
 	// Check if the clicked element is an 'li' with the 'select-box' class
-	const li = e.target.closest('li.select-box .actions a');
+	const li = e.target.closest('li.select-box .actions a i');
 	if (li) {
 		console.log("Hello");
-		li.parentElement.parentElement.remove();
+		//li.parentElement.parentElement.remove();
 		
 	}
 	})
+
+	// when click on setting button that exist in channels list
+	const settingBtnFriend =  document.querySelector('.sidebar .channels .nav .drop-down.my-channels');
+	
+	const div = document.querySelector('.sidebar-container .channel-setting');
+	
+	
+	settingBtnFriend.addEventListener('click', (e) =>{
+		//   console.log(blockBtnFriend);
+		// Check if the clicked element is an 'li' with the 'select-box' class
+		const li = e.target.closest('li.select-box .actions a');
+		// settingBtnFriend.to
+		if (li) {
+			//   console.log("Hello");
+			console.log(li.getBoundingClientRect().top);
+			console.log(li.getBoundingClientRect().left);
+			// console.log(test);
+			div.style.display = 'block';
+			div.style.position = 'absolute';
+			div.style.top = `${li.getBoundingClientRect().top}px`;
+			div.style.left = `${li.getBoundingClientRect().left}px`;
+			//const nickname = li.parentElement.previousElementSibling.children[0].children[1].textContent;
+			
+			//li.parentElement.parentElement.remove()
+		//buildBlockedList(nickname);  
+	}
+	})
+
+	// Close the `div` when clicking outside of it
+	document.addEventListener('click', (e) => {
+		// Check if the click target is not the `div` and not the `settingBtnFriend`
+		if (!div.contains(e.target) && !settingBtnFriend.contains(e.target)) {
+			div.style.display = 'none';
+		}
+	});
+
   })(this);

@@ -114,11 +114,15 @@ function loadComponent(componentName) {
   function loadChat(newComponent, containerName, nickname) {
 	// Access the HTML inside the component
 	const chat = newComponent.querySelector(containerName);
+	console.log(chat);
 	const friend_name = newComponent.children[0].children[0].children[0];
+	// const body_first_msg = newComponent.querySelector(`${containerName} .body-msg span.first-msg`);
+	// body_first_msg.remove();
+	// console.log(body_first_msg);
 	const input1 = friend_name.parentElement.nextElementSibling.nextElementSibling;
 	const input2 = friend_name.parentElement.nextElementSibling.nextElementSibling.nextElementSibling;
 	friend_name.innerHTML = nickname;
-	select_friend = friend_name.parentElement.nextElementSibling.children[0];
+	select_friend = newComponent.querySelector(`${containerName} .body-msg span.first-msg`);
 	if (select_friend)
 		select_friend.remove();
 	input1.style.display = 'none';

@@ -1,142 +1,163 @@
-<div class="sidebar">
-	<div class="header">
-		<div class="txt">
-			<!-- <i class="fa-duotone fa-solid fa-users"></i> -->
-			<i class="fa-solid fa-people-roof"></i>
-			<span>Social</span>
+<div class="sidebar-container">
+	<div class="sidebar">
+		<div class="header">
+			<div class="txt">
+				<!-- <i class="fa-duotone fa-solid fa-users"></i> -->
+				<i class="fa-solid fa-people-roof"></i>
+				<span>Social</span>
+			</div>
+		</div>
+		<div class="nav">
+			<ul class="links">	
+				<li class="active"><a class="btn">Friends</a></li>
+				<li class="inactive"><a class="btn">Channels</a></li>
+			  </ul>
+		</div>
+		<div class="friends show">
+			<ul class="nav">
+				<li class="add-friend">
+					<a>
+						<i class="fa-solid fa-user-plus"></i>
+						<span>Add Friend</span>
+					</a>
+				</li>
+				<li class="select-box close">
+					<a>
+						<i class="i-left fa-solid fa-user-group"></i>
+						<span>Friends</span>
+						<i class="i-right fa-solid fa-angle-down"></i>
+					</a>
+				</li>
+				<!-- drop-down menu -->
+				<ul class="drop-down my-friends">
+					<li class="select-box close">
+						<div class="profile">
+							<a>
+								<img src="../assets/imgs/sidebar/profile.jpg">
+								<span class="nickname">brahim</span>
+							</a>
+						</div>
+						<div class="actions">
+							<a class="first"><i class="fa-solid fa-ban"></i></a>
+							<a class="second"><i class="fa-solid fa-trash"></i></a>
+						</div>
+					</li>
+				</ul>
+				<li class="select-box close">
+					<a>
+						<i class="i-left fa-solid fa-clock"></i>
+						<span>Pending</span>
+						<i class="i-right fa-solid fa-angle-down"></i>
+					</a>
+				</li>
+				<!-- drop-down menu -->
+				<ul class="drop-down pending">
+					<li class="select-box close">
+						<div class="profile">
+							<a>
+								<img src="../assets/imgs/sidebar/profile.jpg">
+								<span class="nickname">brahim</span>
+							</a>
+						</div>
+						<div class="actions">
+							<a class="first"><i class="fa-solid fa-check"></i></a>
+							<a class="second"><i class="fa-sharp fa-solid fa-circle-xmark"></i></a>
+						</div>
+					</li>
+				</ul>
+				<li class="select-box close">
+					<a>
+						<i class="i-left fa-solid fa-envelope"></i>
+						<span>Invited</span>
+						<i class="i-right fa-solid fa-angle-down"></i>
+					</a>
+				</li>
+				<!-- drop-down menu -->
+				<ul class="drop-down invited">
+					<!-- <li class="select-box close">
+						<div class="profile">
+							<a>
+								<img src="../assets/imgs/sidebar/profile.jpg">
+								<span class="nickname">brahim</span>
+							</a>
+						</div>
+						<div class="actions">
+							<a><i class="fa-solid fa-trash"></i></a>
+						</div>
+					</li> -->
+				</ul>
+				<li class="select-box close">
+					<a>
+						<i class="i-left fa-solid fa-person-circle-xmark"></i>
+						<span>Blocked</span>
+						<i class="i-right fa-solid fa-angle-down"></i>
+					</a>
+				</li>
+				<!-- drop-down menu -->
+				<ul class="drop-down blocked">
+					<!-- <li class="select-box close">
+						<div class="profile">
+							<a>
+								<img src="../assets/imgs/sidebar/profile.jpg">
+								<span class="nickname">brahim</span>
+							</a>
+						</div>
+						<div class="actions">
+							<a><i class="fa-sharp fa-solid fa-trash-arrow-up"></i></a>
+						</div>
+					</li> -->
+				</ul>
+			</ul>
+		</div>
+		<div class="channels hidden">
+			<ul class="nav">
+				<li class="add-channel">
+					<a>
+						<i class="fa-solid fa-circle-plus"></i>
+						<span>Create Channel</span>
+					</a>
+				</li>
+				<li class="select-box close">
+					<a>
+						<i class="i-left fa-solid fa-user-group"></i>
+						<span>Channles</span>
+						<i class="i-right fa-solid fa-angle-down"></i>
+					</a>
+				</li>
+				<!-- drop-down menu -->
+				<!-- drop-down menu -->
+				<ul class="drop-down my-channels">
+					<li class="select-box close">
+						<div class="profile">
+							<a>
+								<img src="../assets/imgs/sidebar/profile.jpg">
+								<span class="nickname">my-channel</span>
+							</a>
+						</div>
+						<div class="actions">
+							<a><i class="fa-solid fa-gear"></i></a>
+						</div>
+					</li>
+
+					<li class="select-box close">
+						<div class="profile">
+							<a>
+								<img src="../assets/imgs/sidebar/profile.jpg">
+								<span class="nickname">my-channel</span>
+							</a>
+						</div>
+						<div class="actions">
+							<a><i class="fa-solid fa-gear"></i></a>
+						</div>
+					</li>
+
+				</ul>
 		</div>
 	</div>
-	<div class="nav">
-		<ul class="links">	
-			<li class="active"><a class="btn">Friends</a></li>
-			<li class="inactive"><a class="btn">Channels</a></li>
-		  </ul>
-	</div>
-	<div class="friends show">
-		<ul class="nav">
-			<li class="add-friend">
-				<a>
-					<i class="fa-solid fa-user-plus"></i>
-					<span>Add Friend</span>
-				</a>
-			</li>
-			<li class="select-box close">
-				<a>
-					<i class="i-left fa-solid fa-user-group"></i>
-					<span>Friends</span>
-					<i class="i-right fa-solid fa-angle-down"></i>
-				</a>
-			</li>
-			<!-- drop-down menu -->
-			<ul class="drop-down my-friends">
-				<li class="select-box close">
-					<div class="profile">
-						<a> 
-							<img src="../assets/imgs/sidebar/profile.jpg">
-							<span class="nickname">brahim</span>
-						</a>
-					</div>
-					<div class="actions">
-						<a class="first"><i class="fa-solid fa-ban"></i></a>
-						<a class="second"><i class="fa-solid fa-trash"></i></a>
-					</div>
-				</li>
-			</ul>
-			<li class="select-box close">
-				<a>
-					<i class="i-left fa-solid fa-clock"></i>
-					<span>Pending</span>
-					<i class="i-right fa-solid fa-angle-down"></i>
-				</a>
-			</li>
-			<!-- drop-down menu -->
-			<ul class="drop-down">
-				<li class="select-box close">
-					<div class="profile">
-						<a>
-							<img src="../assets/imgs/sidebar/profile.jpg">
-							<span class="nickname">brahim</span>
-						</a>
-					</div>
-					<div class="actions">
-						<a><i class="fa-solid fa-check"></i></a>
-						<a><i class="fa-sharp fa-solid fa-circle-xmark"></i></a>
-					</div>
-				</li>
-			</ul>
-			<li class="select-box close">
-				<a>
-					<i class="i-left fa-solid fa-envelope"></i>
-					<span>Invited</span>
-					<i class="i-right fa-solid fa-angle-down"></i>
-				</a>
-			</li>
-			<!-- drop-down menu -->
-			<ul class="drop-down invited">
-				<!-- <li class="select-box close">
-					<div class="profile">
-						<a>
-							<img src="../assets/imgs/sidebar/profile.jpg">
-							<span class="nickname">brahim</span>
-						</a>
-					</div>
-					<div class="actions">
-						<a><i class="fa-solid fa-trash"></i></a>
-					</div>
-				</li> -->
-			</ul>
-			<li class="select-box close">
-				<a>
-					<i class="i-left fa-solid fa-person-circle-xmark"></i>
-					<span>Blocked</span>
-					<i class="i-right fa-solid fa-angle-down"></i>
-				</a>
-			</li>
-			<!-- drop-down menu -->
-			<ul class="drop-down blocked">
-				<!-- <li class="select-box close">
-					<div class="profile">
-						<a>
-							<img src="../assets/imgs/sidebar/profile.jpg">
-							<span class="nickname">brahim</span>
-						</a>
-					</div>
-					<div class="actions">
-						<a><i class="fa-sharp fa-solid fa-trash-arrow-up"></i></a>
-					</div>
-				</li> -->
-			</ul>
-		</ul>
-	</div>
-	<div class="channels hidden">
-		<ul class="nav">
-			<li class="add-channel">
-				<a>
-					<i class="fa-solid fa-circle-plus"></i>
-					<span>Create Channel</span>
-				</a>
-			</li>
-			<li class="select-box close">
-				<a>
-					<i class="i-left fa-solid fa-user-group"></i>
-					<span>Channles</span>
-					<i class="i-right fa-solid fa-angle-down"></i>
-				</a>
-			</li>
-			<!-- drop-down menu -->
-			<!-- drop-down menu -->
-			<ul class="drop-down">
-				<li class="select-box close">
-					<div class="profile">
-						<a>
-							<img src="../assets/imgs/sidebar/profile.jpg">
-							<span class="nickname">brahim</span>
-						</a>
-					</div>
-					<div class="actions">
-						<a><i class="fa-sharp fa-solid fa-trash-arrow-up"></i></a>
-					</div>
-				</li>
-			</ul>
+	<div class="channel-setting">
+		<a><i class="fa-solid fa-pen"></i><span>Change Channel Name</span></a>
+		<a><i class="fa-solid fa-paintbrush"></i><span>Change Channel Type</span></a>
+		<a><i class="fa-solid fa-face-frown"></i><span>Unban List</span></a>
+		<a><i class="fa-solid fa-fire"></i><span>Delete Channel</span></a>
 	</div>
 </div>

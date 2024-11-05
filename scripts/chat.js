@@ -2,13 +2,13 @@
 	const input = component.document.querySelector('.chat-container .input-msg2 > input');
 	const body = component.document.querySelector('.chat-container .body-msg');
 	// const msgContainer = component.document.querySelector('.chat-container .body-msg .messages');
-	const msgContainer = body.children[0];
-	console.log(msgContainer);
+	const msgContainer = body.children[1];
+	// console.log(msgContainer);
 	input.addEventListener('keypress', (e) => {
 		if (e.key == 'Enter')
 		{
 			// body.appendChild(msgContainer);
-			// console.log(msgContainer);
+			//console.log(msgContainer);
 
 			const msg = document.createElement('li');
 			msg.classList.add('message');
