@@ -1,6 +1,7 @@
 (function initializeSidebarComponent(component) {
 	// const sidebar = component.querySelector('.sidebar');
-  
+	container = document.querySelector('.container');
+
 	const active = document.querySelector('.sidebar .nav .links .active');
 	const inactive = document.querySelector('.sidebar .nav .links .inactive');
 	const friends = document.querySelector('.sidebar .show');
@@ -24,14 +25,14 @@
 	const addFriendBtn = document.querySelector('.sidebar .friends .nav .add-friend');
 	addFriendBtn.addEventListener('click', ()=> {
 		// confirm('hello:');
-		loadComponent("add-friend");
+		loadComponent("add-friend", 0);
 	})
 	
 	// click on add channel button
 	const addChannelBtn = document.querySelector('.sidebar .channels .nav .add-channel');
 	addChannelBtn.addEventListener('click', ()=> {
 		//confirm('hello:');
-		loadComponent("add-channel");
+		loadComponent("add-channel", 1);
 	})
 
 	const select = document.querySelectorAll('.sidebar .friends .nav > .select-box, .sidebar .channels .nav > .select-box');
@@ -54,8 +55,19 @@
 		})
 	})
 
+	function changeChannelOption(newComponent, containerName, option) {
+		const options = newComponent.querySelectorAll(`${containerName} .option`);
+		options.forEach((opt, i) => {
+			console.log(i);
+			opt.style.display = 'none';
+			if (i == option - 1)
+			{
+				opt.style.display = 'block';
+			}
+		})
+	}
 	
-	function loadComponent(componentName) {
+	function loadComponent(componentName, option) {
 		// Remove any existing component
 		const existingComponent = container.querySelector('add-friend-component, add-channel-component');
 		
@@ -71,7 +83,7 @@
 			case 'add-friend':
 				if (!existingComponent)
 					newComponent = document.createElement('add-friend-component');
-					console.log(newComponent);
+					// console.log(newComponent);
 					containerName = ".add-friend-container";
 					// else
 				// newComponent = document.getElementsByTagName('add-friend-component')[0];
@@ -97,23 +109,50 @@
 		newComponent.addEventListener('content-loaded', () => {
 			// Access the HTML inside the component
 			//console.log(containerName);
-			const input = newComponent.querySelector(`${containerName} .input-msg input`);
+			if (option > 0)
+			{
+				changeChannelOption(newComponent, containerName, option);
+			}
+			if (option == 0)
+				option += 1;
+
+			const input = newComponent.querySelectorAll(`${containerName} .input-msg input`)[option - 1];
 			// click add button
-			const add = newComponent.querySelector(`${containerName} .actions .add`);
+			const add = newComponent.querySelectorAll(`${containerName} .actions .add`)[option - 1];
 			
 			add.addEventListener('click', ()=>{
 				// add friend name to invite list
-				console.log(input.value);
+				console.log(add);
 				if (containerName == ".add-friend-container")
 					buildInviteList(input.value);
 				else
-					buildChannelsList(input.value);
+				{
+					const list = document.querySelector("li.select-box .profile a.active");
+					if (option == 1)
+						buildChannelsList(input.value);
+					else if (option == 2)
+					{
+						console.log(list.children[1]);
+						list.children[1].innerHTML = input.value;
+					}
+					else if (option == 3)
+					{
+						if (input.value == list.children[1].textContent)
+							list.parentElement.parentElement.remove();
+						else
+						{
+							alert("unmatch");
+							return;
+						}
+					}
+				}
 				newComponent.remove();
 			})
 			
 			// click cancel button 
-			const cancel  = newComponent.querySelector(`${containerName} .actions .cancel`);
+			const cancel  = newComponent.querySelectorAll(`${containerName} .actions .cancel`)[option - 1];
 			cancel.addEventListener('click', ()=>{
+				// console.log(cancel);
 				newComponent.remove();
 			})
 			//console.log(sidebar); // This will log the <div class="sidebar"> element
@@ -130,13 +169,13 @@
 	  if (li) {
 		//   console.log("Hello");
 		  console.log(li);
-		  const nickname = li.parentElement.previousElementSibling.children[0].children[1].textContent;
-		  li.parentElement.parentElement.remove()
+		  const nickname = li.parentElement.parentElement.previousElementSibling.children[0].children[1].textContent;
+		  li.parentElement.parentElement.parentElement.remove()
 		  buildBlockedList(nickname);  
 	  }
 	  })
 
-	  // when click on block button that exist in friends list
+	  // when click on unfriend button that exist in friends list
 	  const unfriendBtnFriend =  document.querySelector('.sidebar .friends .nav .drop-down.my-friends');
 	  unfriendBtnFriend.addEventListener('click', (e) =>{
 		//   console.log(blockBtnFriend);
@@ -146,7 +185,7 @@
 		//   console.log("Hello");
 		  console.log(li);		
 		  //const nickname = li.parentElement.previousElementSibling.children[0].children[1].textContent;
-		  li.parentElement.parentElement.remove()
+		  li.parentElement.parentElement.parentElement.remove()
 		  //buildBlockedList(nickname);  
 	  }
 	  })
@@ -162,12 +201,12 @@
 			//   console.log("Hello");
 			
 			console.log(li);
-			const nickname = li.parentElement.previousElementSibling.children[0].children[1].textContent;
-			li.parentElement.parentElement.remove();
+			const nickname = li.parentElement.parentElement.previousElementSibling.children[0].children[1].textContent;
+			li.parentElement.parentElement.parentElement.remove();
 			buildFriendList(nickname);
 		}
 		if (li2) {
-			li2.parentElement.parentElement.remove();
+			li2.parentElement.parentElement.parentElement.remove();
 		}
 	  })
 
@@ -181,8 +220,8 @@
 		//   console.log("Hello");
 		
 		  console.log(li);
-		  const nickname = li.parentElement.previousElementSibling.children[0].children[1].textContent;
-		  li.parentElement.parentElement.remove()
+		  const nickname = li.parentElement.parentElement.previousElementSibling.children[0].children[1].textContent;
+		  li.parentElement.parentElement.parentElement.remove()
 		  buildFriendList(nickname);
 	  }
 	  })
@@ -413,8 +452,9 @@
 	// Check if the clicked element is an 'li' with the 'select-box' class
 	const li = e.target.closest('li.select-box .actions a i');
 	if (li) {
-		console.log("Hello");
-		//li.parentElement.parentElement.remove();
+		// console.log(li.parentElement.parentElement);
+		// delete a friend in invited list
+		li.parentElement.parentElement.parentElement.remove();
 		
 	}
 	})
@@ -426,6 +466,10 @@
 	
 	
 	settingBtnFriend.addEventListener('click', (e) =>{
+
+		const list = document.querySelector("li.select-box .profile a.active");
+		if (list)
+			list.classList.remove("active");
 		//   console.log(blockBtnFriend);
 		// Check if the clicked element is an 'li' with the 'select-box' class
 		const li = e.target.closest('li.select-box .actions a');
@@ -440,7 +484,8 @@
 			div.style.top = `${li.getBoundingClientRect().top}px`;
 			div.style.left = `${li.getBoundingClientRect().left}px`;
 			//const nickname = li.parentElement.previousElementSibling.children[0].children[1].textContent;
-			
+			console.log(li.parentElement.previousElementSibling.children[0]);
+			li.parentElement.previousElementSibling.children[0].classList.add('active');
 			//li.parentElement.parentElement.remove()
 		//buildBlockedList(nickname);  
 	}
@@ -454,4 +499,25 @@
 		}
 	});
 
+	// channel operations
+
+	// change channel name
+	const change_channel = document.querySelector('.channel-setting a.change');
+	change_channel.addEventListener('click', ()=>{
+		div.style.display = 'none';
+		loadComponent("add-channel", 2);
+		// const list = document.querySelector("li.select-box .profile a.active");
+		// console.log(list.children[1]);
+		// list.children[1].innerHTML = "hello";
+	})
+
+	// delete channel
+	const delete_channel = document.querySelector('.channel-setting a.delete');
+	delete_channel.addEventListener('click', ()=>{
+		div.style.display = 'none';
+		loadComponent("add-channel", 3);
+		// const list = document.querySelector("li.select-box .profile a.active");
+		// console.log(list.children[1]);
+		// list.remove();
+	})
   })(this);

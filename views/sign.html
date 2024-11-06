@@ -4,7 +4,9 @@
 	</video>
 	
 	<div class="sign">
-		<div class="welcome" style="background-image: url('../assets/imgs/welcome.svg');"></div>
+		<div class="welcome">
+			<img src="../assets/imgs/welcome.png">
+		</div>
 		<div class="sign-in">
 			<div class="nav">
 				<ul class="links">
@@ -13,10 +15,13 @@
 				</ul>
 			</div>
 			<!-- sign-in -->
-			<form class="form-signin show" action="/home" method="post" name="form">
+			<form class="form-signin show" name="form">
 				<h1>Create Your Account</h1>
 				<input class="form-styling" type="text" id="email" placeholder="Email"/>
-				<input class="form-styling" type="text"  id="pwd" placeholder="Password"/>
+				<div class="show-pwd">
+					<input class="form-styling" type="password" name="password" id="pwd" placeholder="Password"/>
+					<i class="fa-solid fa-eye-slash"></i>
+				</div>
 				<div class="forgot">
 					<a href="#">Forgot Password?</a>
 				</div>
@@ -36,8 +41,17 @@
 
 			<!-- sign-up -->
 			<form class="form-signup hidden" action="" method="post" name="form">
+				<input class="form-styling" type="text" name="fullname" placeholder="Full Name"/>
+				<input class="form-styling" type="text" name="username" placeholder="Username"/>
 				<input class="form-styling" type="text" name="email" placeholder="Email"/>
-				<input class="form-styling" type="text" name="password" placeholder="Password"/>
+				<div class="show-pwd">
+					<input class="form-styling" type="text" name="password" placeholder="Password"/>
+					<i class="fa-solid fa-eye-slash"></i>
+				</div>
+				<div class="show-pwd">
+					<input class="form-styling" type="text" name="confirm-password" placeholder="Confirm Password"/>
+					<i class="fa-solid fa-eye-slash"></i>
+				</div>
 				<div class="btn-continue">
 					<a class="btn-signin" href="#">continue</a>
 				</div>

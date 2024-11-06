@@ -39,4 +39,20 @@ btnContinue.addEventListener('click', ()=>{
 	}
 })
 
-
+// const passwords = document.querySelectorAll
+const eye_icon = document.querySelectorAll('input + i'); 
+eye_icon.forEach(li => {
+	li.addEventListener('click', (e)=> {
+		const input = e.target.closest('.show-pwd').children[0];
+		if (li.className == "fa-solid fa-eye")
+		{
+			li.className = "fa-solid fa-eye-slash";
+			input.type = "password";
+		}
+		else 
+		{
+			li.className = "fa-solid fa-eye";
+			input.type = "text";
+		}
+	})
+})

@@ -9,6 +9,14 @@
 	border: 3px solid #4a19fe;
 }
 
+/* .add-channel-container .option {
+	display: none;
+}
+
+.add-channel-container .option.active{
+	display: block;
+} */
+
 .add-channel-container h1 {
 	margin: 10px 0;
 }
