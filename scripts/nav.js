@@ -71,66 +71,66 @@ function loadComponent(componentName) {
   }
   
 //   let components = ['']
-  function loadComponent2(componentName, nickname) {
+//   function loadComponent2(componentName, nickname) {
 	
-	// Remove any existing component
-	const existingComponent = container.querySelector('game-component, sign-component, chat-component');
-	if (existingComponent) {
-	//   existingComponent.remove();
-	}
+// 	// Remove any existing component
+// 	const existingComponent = container.querySelector('game-component, sign-component, chat-component');
+// 	if (existingComponent) {
+// 	//   existingComponent.remove();
+// 	}
   
-	// Create a new component based on the componentName
-	let newComponent;
-	let containerName;
-	switch (componentName) {
-	    case 'game':
-			newComponent = document.createElement('game-component');
-			break;
-		case 'chat':
-			containerName = ".chat-container";
-			if (!existingComponent)
-			{
-				newComponent = document.createElement('chat-component');
-			}
-			else
-			{
-				newComponent = document.getElementsByTagName('chat-component')[0];
-				loadChat(newComponent, containerName, nickname);
-			}
-			
-		break;
-		default:
-		return;
-	}
+// 	// Create a new component based on the componentName
+// 	let newComponent;
+// 	let containerName;
+// 	switch (componentName) {
+// 	    case 'game':
+// 			newComponent = document.createElement('game-component');
+// 			break;
+// 		case 'chat':
+// 			containerName = ".chat-container";
+// 			if (!existingComponent)
+// 			{
+// 				newComponent = document.createElement('chat-component');
+// 			}
+// 			else
+// 			{
+// 				newComponent = document.getElementsByTagName('chat-component')[0];
+// 				loadChat(newComponent, containerName, nickname);
+// 			}
+// 			break;	
+// 		default:
+// 		// return;
+// 	}
   
-	// Append the new component to the container
-	if (!existingComponent)
-		container.appendChild(newComponent);
-		newComponent.addEventListener('content-loaded', () => {
-		loadChat(newComponent, containerName, nickname);
-	})
-  }
+// 	// Append the new component to the container
+// 	if (!existingComponent)
+// 		container.appendChild(newComponent);
+// 		newComponent.addEventListener('content-loaded', () => {
+// 		if (containerName == ".chat-container")
+// 			loadChat(newComponent, containerName, nickname);
+// 	})
+//   }
   	
-  function loadChat(newComponent, containerName, nickname) {
-	// Access the HTML inside the component
-	const chat = newComponent.querySelector(containerName);
-	console.log(chat);
-	const friend_name = newComponent.children[0].children[0].children[0];
-	// const body_first_msg = newComponent.querySelector(`${containerName} .body-msg span.first-msg`);
-	// body_first_msg.remove();
-	// console.log(body_first_msg);
-	const input1 = friend_name.parentElement.nextElementSibling.nextElementSibling;
-	const input2 = friend_name.parentElement.nextElementSibling.nextElementSibling.nextElementSibling;
-	friend_name.innerHTML = nickname;
-	select_friend = newComponent.querySelector(`${containerName} .body-msg span.first-msg`);
-	if (select_friend)
-		select_friend.remove();
-	input1.style.display = 'none';
-	input2.style.display = 'block';
-	input2.children[1].innerHTML = 'Messaging ' + nickname;
-	if (!chat.classList.contains('active'))
-		chat.classList.add('active');
-}
+//   function loadChat(newComponent, containerName, nickname) {
+// 	// Access the HTML inside the component
+// 	const chat = newComponent.querySelector(containerName);
+// 	console.log(chat);
+// 	const friend_name = newComponent.children[0].children[0].children[0];
+// 	// const body_first_msg = newComponent.querySelector(`${containerName} .body-msg span.first-msg`);
+// 	// body_first_msg.remove();
+// 	// console.log(body_first_msg);
+// 	const input1 = friend_name.parentElement.nextElementSibling.nextElementSibling;
+// 	const input2 = friend_name.parentElement.nextElementSibling.nextElementSibling.nextElementSibling;
+// 	friend_name.innerHTML = nickname;
+// 	select_friend = newComponent.querySelector(`${containerName} .body-msg span.first-msg`);
+// 	if (select_friend)
+// 		select_friend.remove();
+// 	input1.style.display = 'none';
+// 	input2.style.display = 'block';
+// 	input2.children[1].innerHTML = 'Messaging ' + nickname;
+// 	if (!chat.classList.contains('active'))
+// 		chat.classList.add('active');
+// }
 
 
   // Listen for popstate events to handle back/forward navigation

@@ -1,10 +1,15 @@
+// Import the shared function(s) at the top of your component file
+// import { loadComponent2, loadChat } from '../scripts/utils.js';
+
+
 class RightSideBar extends HTMLElement {
 	constructor() {
-	  super();
-	  // Attach shadow root
-	//   this.attachShadow({ mode: 'open' });
+		super();
+		// Attach shadow root
+		//   this.attachShadow({ mode: 'open' });
 	}
 	async connectedCallback() {
+		
 		// Fetch HTML
 		const htmlResponse = await fetch('../views/right-sidebar.html');
 		const htmlContent = await htmlResponse.text();
@@ -35,8 +40,15 @@ class RightSideBar extends HTMLElement {
 		scriptFunction();
 
 		// Dispatch an event to notify that the content is ready
-		//this.dispatchEvent(new CustomEvent('content-loaded', { bubbles: true, composed: true }));
+		this.dispatchEvent(new CustomEvent('content-loaded', { bubbles: true, composed: true }));
 		
+
+		 // Dispatch a custom event specifically for the right sidebar being loaded
+		//  this.dispatchEvent(new CustomEvent('right-sidebar-loaded', {
+        //     bubbles: true,
+        //     composed: true,
+        //     detail: { message: "Right sidebar has loaded" }
+        // }));
 
 
 	  }

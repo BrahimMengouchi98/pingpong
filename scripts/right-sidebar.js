@@ -67,27 +67,22 @@
 // part 3
 
 (function initializeSidebarComponent(component) {
-	//const sidebar = component.querySelector('.sidebar-right');
+	// const sidebar = component.querySelector('.sidebar-right');
+	const friends = component.querySelector('.sidebar-right .friends .nav .drop-down');
+	// console.log("br", friends);
 	
-	const friends = component.querySelectorAll('.sidebar-right .friends .nav .drop-down .select-box .profile');
-	friends.forEach(ele => {
-		ele.addEventListener('click', () => {
-			// console.log(ele);
-			// const nickname = document.querySelector('.sidebar-right .friends .profile a span.nickname');
-			const nickname = ele.children[0].children[1];
-			loadComponent2('chat', nickname.textContent);
+	friends.addEventListener('click', (e) => {
+		const hh = e.target.closest(".select-box .profile a span");
+		if (hh)
+		{
+		  //window.loadComponent2(container, 'chat', hh.textContent);
+		}
+		if (e.target.tagName == "IMG" || e.target.tagName == "SPAN")
+		{
+			// console.log(container);
+			window.loadComponent3(container, 'chat-component', hh.textContent);
+		}
 
-			if (nickname) {
-				// Dispatch the 'friend-selected' event with the nickname as detail
-				// component.dispatchEvent(new CustomEvent('friend-selected', {
-				// 	detail: { nickname },
-				// 	bubbles: true,
-				// 	composed: true
-				// }));
-				
-			}
-
-		})
 	})
 
   })(this);
