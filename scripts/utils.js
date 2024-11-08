@@ -249,12 +249,12 @@ function buildChannelsList(channelName)
 	newComponent.remove();
 }
 
-function changeChannelOption(newComponent, containerName, option) {
+function changeOption(newComponent, containerName, option) {
 	const options = newComponent.querySelectorAll(`${containerName} .option`);
 	options.forEach((opt, i) => {
 		console.log(i);
 		opt.style.display = 'none';
-		if (i == option - 1)
+		if (i == option)
 		{
 			opt.style.display = 'block';
 		}
@@ -305,13 +305,13 @@ window.loadComponent = function(container, componentName, option) {
 		//console.log(containerName);
 		if (option > 0)
 		{
-			changeChannelOption(newComponent, containerName, option);
 		}
-		if (option == 0)
-			option += 1;
-
-		const input = newComponent.querySelectorAll(`${containerName} .input-msg input`)[option - 1];
-		
+		changeOption(newComponent, containerName, option);
+		if (containerName == ".add-friend-container" && option == 0)
+		{
+			
+		}
+		const input = newComponent.querySelectorAll(`${containerName} .input-msg input`)[option];
 		input.addEventListener('keypress', (e) => {
 			if (e.key == 'Enter')
 			{
@@ -320,17 +320,17 @@ window.loadComponent = function(container, componentName, option) {
 		});
 
 		// click add button
-		const add = newComponent.querySelectorAll(`${containerName} .actions .add`)[option - 1];
-		
+		const add = newComponent.querySelectorAll(`${containerName} .actions .add`)[option];
+		//const add = newComponent.querySelector(`${containerName} .actions .add`);
+		// console.log(add);
 		// add friend name to invite list or 
 		// add channel or change name to a channel or delete a channel
 		add.addEventListener('click', ()=>{
-			console.log(add);
 			listeningForAction(newComponent, containerName, input, option);
 		})
 		
 		// click cancel button 
-		const cancel  = newComponent.querySelectorAll(`${containerName} .actions .cancel`)[option - 1];
+		const cancel  = newComponent.querySelectorAll(`${containerName} .actions .cancel`)[option];
 		cancel.addEventListener('click', ()=>{
 			// console.log(cancel);
 			newComponent.remove();

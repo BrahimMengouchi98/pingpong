@@ -1,0 +1,305 @@
+
+::-webkit-scrollbar {
+	width: 6px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+	/* background: #aa5656; */
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+	background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+	background: #555;
+  }
+  
+  .sidebar-right2{
+	  width: 330px;
+	  height: 600px;
+	  background-color: #2a1a4d;
+	  position: absolute;
+	  top: calc(50% - 300px);
+	  /* left: -300px; */
+	  right: 0;
+	  overflow: auto;
+	  /* overflow-x: none; */
+	  /* transition: left 10s ease-in-out 10s; */
+	  /* padding: 10px 20px; */
+	  /* border: 3px solid #1984; */
+	  outline: 3px solid #1984;
+  }
+  
+  .sidebar-right2.hover{
+	  -webkit-animation: hover 0.5s normal forwards; 
+	  -moz-animation:    hover 0.5s normal forwards;
+	  -o-animation:      hover 0.5s normal forwards;
+  }
+  
+  .sidebar-right2.leave{
+	  -webkit-animation: leave 0.5s normal forwards; 
+	  -moz-animation:    leave 0.5s normal forwards;
+	  -o-animation:      leave 0.5s normal forwards;
+  }
+  
+  
+  /* The animation code */
+  @keyframes hover {
+	  from  {left: -300px;}
+	  to {left: 0;}
+	}
+  
+	@keyframes leave {
+	  from  {left: 0;}
+	  to {left: -300px;}
+	}
+  
+	
+  
+	.sidebar-right2 .header {
+	  width: 100%;
+	  height: 15%;
+	  background: linear-gradient(to right, #6344b9, #4c8aad);
+	  
+	}
+	.sidebar-right2 .header .txt {
+	  width: 100%;
+	  height: 100%;
+	  display: flex;
+	  align-items: center; 
+	  justify-content: center;
+	  color: #fff;
+	}
+  
+	.sidebar-right2 .header .txt span{
+	  display: inline-block;
+	  /* background-color: #fff; */
+	  /* height: 100%; */
+	  /* font-weight: bold; */
+	  font-size: 30px;
+	  
+	  margin-left: 10px;
+	}
+  
+	.sidebar-right2 .header .txt i{
+	  font-size: 30px;
+	  margin-right: 10px;
+	}
+	
+  .sidebar-right2 .friends{
+	  padding: 30px 0;
+	  /* background-color: brown; */
+	  text-align: center;
+  }
+  
+  .sidebar-right2 .friends .nav {
+	  list-style-type: none;
+  }
+  
+  .sidebar-right2 .friends .nav > li {
+	  margin: 20px 10px;
+	  border-radius: 10px;
+	  background-color: #c9c1d6;
+	  color: #32076c;
+	  padding: 5px 0;
+	  /* display: flex;
+	  align-items: center;
+	  justify-content: center; */
+  }
+  
+  .sidebar-right2 .friends .nav > li.add-friend {
+	  margin: 0 40px;
+	  border-radius: 5px;
+	  background-color: #04975b;
+  }
+  
+  .sidebar-right2 .friends .nav > li > a,
+  .sidebar-right2 .channels .nav > li > a{
+	  text-decoration: none;
+	  display: inline-block;
+	  /* padding: 20px 0; */
+	  width: 100%;
+	  height: 100%;
+	  /* background-color: #fff; */
+	  border-radius: 10px;
+	  padding: 10px 20px;
+	  
+  }
+  
+  .sidebar-right2 .friends .nav > li.add-friend a {
+	  border-radius: 5px;
+	  /* background-color: #04975b; */
+	  text-align: center;
+  }
+  
+  .sidebar-right2 .friends .nav > li a:hover{
+	  cursor: pointer;
+  }
+  
+  .sidebar-right2 .friends .nav > li a span{
+	  display: inline-block;
+	  padding: 10px 0;
+	  padding: 0;
+	  font-size: 20px;
+	  font-weight:900;
+	  margin: 0 30px;
+  }
+  
+  .sidebar-right2 .friends .nav > li a i
+  {
+	  font-weight: 700;
+	  font-size: 20px;
+	  /* margin: 0 30px; */
+  }
+  
+  .sidebar-right2 .friends .nav > li.add-friend a span,
+  .sidebar-right2 .channels .nav > li.add-channel a span {
+	  margin: 0 10px;
+  }
+  
+  /* .drop-down {
+	  display: none;
+  } */
+  
+  .sidebar-right2 .drop-down {
+	  /* display: none; */
+  }
+  
+  .sidebar-right2 .friends .nav .drop-down .select-box.ch-friends{
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  background-color: #983a3a;
+	  margin: 10px 5px;
+	  border-radius: 10px;
+	  background-color: #776f6f;	
+	  padding: 5px 0;
+  }
+
+  .sidebar-right2 .friends .nav .drop-down .select-box.owner{
+	background-color: #983a3a;
+	margin: 10px 5px;
+	border-radius: 10px;
+	background-color: #776f6f;	
+	padding: 5px 0;
+  }
+
+  .sidebar-right2 .friends .nav .drop-down .select-box.ch-friends .profile{
+	  flex: 75%;
+	  background-color: #ae528e;
+	padding: 0 20px;
+
+	  
+  }
+
+  .sidebar-right2 .friends .nav .drop-down .select-box.owner .profile{
+	/* display: none; */
+	/* flex: 10%; */
+	/* background-color: #fff; */
+	background-color: #04975b;
+	/* text-align: start; */
+	padding: 0 20px;
+	
+  }
+  
+  
+  .sidebar-right2 .friends .nav .drop-down .select-box.ch-friends .profile a {
+	  display: flex;
+	  /* justify-content: space-evenly; */
+	  align-items: center;
+	  /* background-color: #fff; */
+	  
+  }
+
+  .sidebar-right2 .friends .nav .drop-down .select-box.owner .profile a {
+	display: flex;
+	/* justify-content:space-around; */
+	align-items: center;
+	/* background-color: #fff; */
+	
+}
+  
+  .sidebar-right2 .friends .nav .drop-down .select-box .profile a span:hover{
+	  cursor: pointer;
+  }
+  
+  
+  .sidebar-right2 .friends .nav .drop-down .select-box .profile a img {
+	  border-radius: 50%;
+	  width: 20%;
+	  height: 100%;
+	  margin-right: 10px;
+	  /* margin: 0 10px; */
+	}
+	
+	.sidebar-right2 .friends .nav .drop-down .select-box.owner .profile a img {
+		border-radius: 50%;
+		width: 13%;
+		height: 100%;
+	/* margin: 0 10px; */
+}
+  
+  .sidebar-right2 .friends .nav .drop-down .profile a span {
+	  font-weight:500;
+	  font-size: 20px;
+	  /* margin: 0 auto; */
+  }
+  
+  .sidebar-right2 .friends .nav .drop-down .actions {
+	  flex: 25%;
+	  /* background-color: #6c2121; */
+	  display: flex;
+	  align-items:center;
+	  justify-content: center;
+  }
+  
+  .sidebar-right2 .friends .nav .drop-down .actions a {
+	  display: inline-block;
+	  text-decoration: none;
+	  /* background-color: #04975b; */
+	  margin: 0 5px;
+	  padding: 10px;
+	  font-size: 20px;
+  }
+  
+  /* .drop-down .actions a i {
+	  width: 100%;
+	  height: 100%;
+  } */
+  
+  .sidebar-right2 .friends .nav .drop-down .actions a i {
+	  cursor: pointer;
+  }
+  
+  .channels .drop-down.my-channels .select-box .actions{
+	  position: relative;
+  }
+  
+  .sidebar-right2-container .channel-setting{
+	  display: none;
+	  background-color: #f1f1f1;
+	  min-width: 160px;
+	  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	  /* position: absolute; */
+  }
+  
+  .sidebar-right2-container .channel-setting a {
+	  color: black;
+	  padding: 12px 16px;
+	  text-decoration: none;
+	  display: block;
+  }
+  
+  .sidebar-right2-container .channel-setting a:hover{
+	  background-color: #ddd;
+	  cursor: pointer;
+  }
+  
+  .sidebar-right2-container .channel-setting a i {
+	  margin-right: 10px;
+	  float: left;
+  }

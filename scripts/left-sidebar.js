@@ -1,7 +1,7 @@
 (function initializeSidebarComponent(component) {
 	// const sidebar = component.querySelector('.sidebar');
 	// console.log(component);
-	container = document.querySelector('.container');
+	const container = document.querySelector('.container');
 
 	const active = document.querySelector('.sidebar .nav .links .active');
 	const inactive = document.querySelector('.sidebar .nav .links .inactive');
@@ -33,7 +33,7 @@
 	const addChannelBtn = document.querySelector('.sidebar .channels .nav .add-channel');
 	addChannelBtn.addEventListener('click', ()=> {
 		//confirm('hello:');
-		window.loadComponent(container, "add-channel", 1);
+		window.loadComponent(container, "add-channel", 0);
 	})
 
 	const select = document.querySelectorAll('.sidebar .friends .nav > .select-box, .sidebar .channels .nav > .select-box');
@@ -319,10 +319,20 @@
 	const change_channel = document.querySelector('.channel-setting a.change');
 	change_channel.addEventListener('click', ()=>{
 		div.style.display = 'none';
-		window.loadComponent(container, "add-channel", 2);
+		window.loadComponent(container, "add-channel", 1);
 		// const list = document.querySelector("li.select-box .profile a.active");
 		// console.log(list.children[1]);
 		// list.children[1].innerHTML = "hello";
+	})
+
+	// unban list of channel
+	const unban_channel = document.querySelector('.channel-setting a.unban');
+	unban_channel.addEventListener('click', ()=>{
+		div.style.display = 'none';
+		window.loadComponent(container, "add-channel", 2);
+		// const list = document.querySelector("li.select-box .profile a.active");
+		// console.log(list.children[1]);
+		// list.remove();
 	})
 
 	// delete channel
