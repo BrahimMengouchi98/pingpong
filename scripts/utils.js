@@ -249,6 +249,14 @@ function buildChannelsList(channelName)
 	newComponent.remove();
 }
 
+function getFriends() {
+	const friends = document.querySelectorAll('.sidebar .friends .drop-down.my-friends li.select-box .profile a span');
+	friends.forEach(li => {
+		window.buildMemberList(li.textContent);
+		// console.log(li.textContent);
+	})
+}
+
 function changeOption(newComponent, containerName, option) {
 	const options = newComponent.querySelectorAll(`${containerName} .option`);
 	options.forEach((opt, i) => {
@@ -257,6 +265,11 @@ function changeOption(newComponent, containerName, option) {
 		if (i == option)
 		{
 			opt.style.display = 'block';
+			if (containerName == ".add-friend-container" && option == 1)
+			{
+				getFriends();
+
+			}
 		}
 	})
 }
@@ -312,12 +325,15 @@ window.loadComponent = function(container, componentName, option) {
 			
 		}
 		const input = newComponent.querySelectorAll(`${containerName} .input-msg input`)[option];
-		input.addEventListener('keypress', (e) => {
-			if (e.key == 'Enter')
-			{
-				listeningForAction(newComponent, containerName, input, option);
-			}
-		});
+		if (input)
+		{
+			input.addEventListener('keypress', (e) => {
+				if (e.key == 'Enter')
+				{
+					listeningForAction(newComponent, containerName, input, option);
+				}
+			});
+		}
 
 		// click add button
 		const add = newComponent.querySelectorAll(`${containerName} .actions .add`)[option];
@@ -325,15 +341,33 @@ window.loadComponent = function(container, componentName, option) {
 		// console.log(add);
 		// add friend name to invite list or 
 		// add channel or change name to a channel or delete a channel
-		add.addEventListener('click', ()=>{
-			listeningForAction(newComponent, containerName, input, option);
-		})
+		if (add)
+		{
+			add.addEventListener('click', ()=>{
+				listeningForAction(newComponent, containerName, input, option);
+			})
+		}
 		
 		// click cancel button 
 		const cancel  = newComponent.querySelectorAll(`${containerName} .actions .cancel`)[option];
-		cancel.addEventListener('click', ()=>{
-			// console.log(cancel);
-			newComponent.remove();
+		if (cancel)
+		{
+			cancel.addEventListener('click', ()=>{
+				// console.log(cancel);
+				newComponent.remove();
+			})
+			
+		}
+		// when click on add member window
+		const addMember  = newComponent.querySelectorAll(`${containerName} .option.add-member ul.drop-down li.select-box .actions a i`);
+		addMember.forEach(li => {
+			//listeningForAction(newComponent, containerName, input, option);
+			li.addEventListener('click', ()=> {
+				// console.log();
+				const nickname = li.parentElement.parentElement.previousSibling.children[0].children[1].textContent;
+				window.addListMember(nickname);
+				li.parentElement.parentElement.parentElement.remove();
+			})
 		})
 		//console.log(sidebar); // This will log the <div class="sidebar"> element
 		//chat.classList.add('active');

@@ -22,6 +22,7 @@
 	width: 330px;
 	height: 600px;
 	background-color: #2a1a4d;
+	opacity: .9;
 	position: absolute;
 	top: calc(50% - 300px);
 	/* left: -300px; */
