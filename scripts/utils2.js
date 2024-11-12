@@ -140,3 +140,4 @@ window.addListMember = function(nickname) {
   // append li to ul
   invitedFriends.appendChild(list);
 }
+

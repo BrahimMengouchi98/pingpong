@@ -20,7 +20,7 @@ links.forEach(element => {
 			history.pushState({ page: 'game' }, 'Game', '/game');
 
 			// Load the game component
-			loadComponent('game');
+			window.loadComponent2('game', container);
 		  }
 		  else if (element.parentElement.getAttribute('class') === 'chat') {
 			// Check if the clicked link is the "Game" link  
@@ -30,45 +30,12 @@ links.forEach(element => {
 			history.pushState({ page: 'chat' }, 'Chat', '/chat');
   
 			  // Load the game component
-			  loadComponent('chat');
+			  window.loadComponent2('chat', container);
 			}
 	})
 });
 
 
-// Function to load the specified component
-function loadComponent(componentName) {
-	// Remove any existing component
-	const existingComponent = container.querySelector('game-component, sign-component, chat-component');
-	if (existingComponent) {
-	  existingComponent.remove();
-	}
-  
-	// Create a new component based on the componentName
-	let newComponent;
-	let containerName;
-	switch (componentName) {
-	    case 'game':
-			newComponent = document.createElement('game-component');
-			break;
-		case 'chat':
-			newComponent = document.createElement('chat-component');
-			containerName = ".chat-container";
-		break;
-		default:
-		return;
-	}
-  
-	// Append the new component to the container
-	container.appendChild(newComponent);
-	newComponent.addEventListener('content-loaded', () => {
-		// Access the HTML inside the component
-		//console.log(containerName);
-		const chat = newComponent.querySelector(containerName);
-		//console.log(sidebar); // This will log the <div class="sidebar"> element
-		chat.classList.add('active');
-	})
-  }
   
 //   let components = ['']
 //   function loadComponent2(componentName, nickname) {

@@ -268,7 +268,6 @@ function changeOption(newComponent, containerName, option) {
 			if (containerName == ".add-friend-container" && option == 1)
 			{
 				getFriends();
-
 			}
 		}
 	})
@@ -280,7 +279,7 @@ window.loadComponent = function(container, componentName, option) {
 	
 	if (existingComponent) {
 	//   existingComponent.remove();
-	return;
+	//return;
 	}
   
 	// Create a new component based on the componentName
@@ -314,16 +313,7 @@ window.loadComponent = function(container, componentName, option) {
 
 	}
 	newComponent.addEventListener('content-loaded', () => {
-		// Access the HTML inside the component
-		//console.log(containerName);
-		if (option > 0)
-		{
-		}
 		changeOption(newComponent, containerName, option);
-		if (containerName == ".add-friend-container" && option == 0)
-		{
-			
-		}
 		const input = newComponent.querySelectorAll(`${containerName} .input-msg input`)[option];
 		if (input)
 		{
@@ -371,5 +361,39 @@ window.loadComponent = function(container, componentName, option) {
 		})
 		//console.log(sidebar); // This will log the <div class="sidebar"> element
 		//chat.classList.add('active');
+	})
+  };
+
+  // Function to load the specified component
+window.loadComponent2 = function(componentName, container) {
+	// Remove any existing component
+	const existingComponent = container.querySelector('game-component, sign-component, chat-component');
+	if (existingComponent) {
+	  existingComponent.remove();
+	}
+  
+	// Create a new component based on the componentName
+	let newComponent;
+	let containerName;
+	switch (componentName) {
+	    case 'game':
+			newComponent = document.createElement('game-component');
+			break;
+		case 'chat':
+			newComponent = document.createElement('chat-component');
+			containerName = ".chat-container";
+		break;
+		default:
+		return;
+	}
+  
+	// Append the new component to the container
+	container.appendChild(newComponent);
+	newComponent.addEventListener('content-loaded', () => {
+		// Access the HTML inside the component
+		//console.log(containerName);
+		const chat = newComponent.querySelector(containerName);
+		//console.log(sidebar); // This will log the <div class="sidebar"> element
+		chat.classList.add('active');
 	})
   };
