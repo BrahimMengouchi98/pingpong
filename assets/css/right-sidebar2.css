@@ -280,7 +280,7 @@
 	  position: relative;
   }
   
-  .sidebar-right2-container .channel-setting{
+ .sidebar-right2-container .member-setting{
 	  display: none;
 	  background-color: #f1f1f1;
 	  min-width: 160px;
@@ -288,19 +288,19 @@
 	  /* position: absolute; */
   }
   
-  .sidebar-right2-container .channel-setting a {
+ .sidebar-right2-container .member-setting a {
 	  color: black;
 	  padding: 12px 16px;
 	  text-decoration: none;
 	  display: block;
   }
   
-  .sidebar-right2-container .channel-setting a:hover{
+ .sidebar-right2-container .member-setting a:hover{
 	  background-color: #ddd;
 	  cursor: pointer;
   }
   
-  .sidebar-right2-container .channel-setting a i {
+ .sidebar-right2-container .member-setting a i {
 	  margin-right: 10px;
 	  float: left;
   }
