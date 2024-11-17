@@ -1,0 +1,3 @@
+(function initializeChatComponent(component) {
+	
+})(this);

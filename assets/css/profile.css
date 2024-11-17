@@ -149,6 +149,12 @@
 }
 
 
+/* leader board */
+.profile-container .body .info-container .ranking .match-history.leader-board{
+	width: 100%;
+	margin-top: 10px;
+	/* height: 100%; */
+}
 
 
 .circle-container {

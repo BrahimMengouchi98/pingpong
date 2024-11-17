@@ -1,0 +1,131 @@
+.settings-container {
+	padding: 0;
+	position: absolute;
+	width: 50%;
+	height: 800px;
+	left: calc(50% - 25%);
+	top: calc(50% - 400px);
+	/* top:100%; */
+	/* background-color: #15023c; */
+	border: 3px solid #4a19fe;
+}
+
+.settings-container .header {
+	background: linear-gradient(to right, #ae528e, #ae8660);
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 10%;
+	/* padding: 20px 0; */
+}
+
+.settings-container .header h2 {
+	letter-spacing: 5px;
+}
+
+.settings-container .body-msg {
+	/* background-color: #fff; */
+	height: 90%;
+	position: relative;
+	background-color: #15023c;
+}
+
+.settings-container .body-msg .profile-container {
+	background-color: #a2a2a2;
+	/* opacity: .3; */
+	width: 70%;
+	height: 100%;
+	margin: 0 auto;	
+	padding: 20px;
+}
+
+.settings-container .body-msg .profile-container .profile-img {
+	/* background-color: #fff; */
+	width: 150px;
+	height: 150px;
+	margin: 0 auto;
+}
+
+.settings-container .body-msg .profile-container .profile-img img {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+.settings-container .body-msg .profile-container .profile-img img:hover {
+	cursor: pointer;
+}
+
+.settings-container .body-msg .profile-container .user,
+.settings-container .body-msg .profile-container .auth{
+	/* background-color: #4a19fe; */
+	margin-top: 30px;
+}
+
+.settings-container .body-msg .profile-container .user .username,
+.settings-container .body-msg .profile-container .user .tow-factor {
+	margin-top: 10px;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.settings-container .body-msg .profile-container .user .username .name,
+.settings-container .body-msg .profile-container .auth .tow-factor .name{
+	/* display: inline-block; */
+}
+
+.settings-container .body-msg .profile-container .user .username a,
+.settings-container .body-msg .profile-container .auth .tow-factor a {
+	/* float: right; */
+	text-transform: uppercase;
+	background-color: #4a19fe;
+	padding: 10px 20px;
+	border: 1px solid #15023c;
+	color: #fff;
+}
+
+.settings-container .body-msg .profile-container .auth .tow-factor a{
+	background-color: #22bc07;
+}
+
+.settings-container .body-msg .profile-container .auth .tow-factor .name {
+	color: #840806;
+}
+.settings-container .body-msg .profile-container .user .username a:hover,
+.settings-container .body-msg .profile-container .auth .tow-factor a:hover {
+	cursor: pointer;
+}
+
+.settings-container .body-msg .profile-container .logout,
+.settings-container .body-msg .profile-container .delete-account {
+	width: 500px;
+	background-color: #fff;
+	margin: 50px auto;
+	text-align: center;
+}
+
+.settings-container .body-msg .profile-container .logout a,
+.settings-container .body-msg .profile-container .delete-account a {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	text-transform: uppercase;
+	padding: 10px 20px;
+	border: 1px solid #15023c;
+	color: #fff;
+}
+
+.settings-container .body-msg .profile-container .logout a:hover,
+.settings-container .body-msg .profile-container .delete-account a:hover {
+	cursor: pointer;
+}
+
+.settings-container .body-msg .profile-container .logout a {
+	background-color: #fd8114;
+}
+
+.settings-container .body-msg .profile-container .delete-account a {
+	background-color: #ef110d;
+}
