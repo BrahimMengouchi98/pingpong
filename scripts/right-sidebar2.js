@@ -1,5 +1,4 @@
 (function initializeSidebarComponent(component) {
-	console.log("hello");
 	const container = document.querySelector('.container');
 
 	// when click on add memeber button

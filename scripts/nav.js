@@ -9,6 +9,7 @@ links.forEach(element => {
 		// 	element.classList.remove('active');
 		active.classList.remove('active');
 		element.classList.add('active');
+
 		// Prevent the default link behavior
 		event.preventDefault(); 
 
@@ -30,8 +31,18 @@ links.forEach(element => {
 			history.pushState({ page: 'chat' }, 'Chat', '/chat');
   
 			  // Load the game component
-			  window.loadComponent2('chat', container);
+			 window.loadComponent2('chat', container);
 			}
+			else if (element.parentElement.getAttribute('class') === 'settings') {
+				// Check if the clicked link is the "Game" link  
+				console.log('Chat component will be added');
+				  
+				  // Change the URL to /game without reloading the page
+				history.pushState({ page: 'settings' }, 'Settings', '/settings');
+	  
+				  // Load the game component
+				 window.loadComponent2('settings', container);
+				}
 	})
 });
 
@@ -100,10 +111,18 @@ links.forEach(element => {
 // }
 
 
-  // Listen for popstate events to handle back/forward navigation
+//   // Listen for popstate events to handle back/forward navigation
+// window.addEventListener('popstate', (event) => {
+// 	const componentName = event.state ? event.state.page : null;
+// 	if (componentName) {
+// 	  loadComponent(componentName);
+// 	}
+//   });
+
+
+// Handle browser back/forward navigation
 window.addEventListener('popstate', (event) => {
-	const componentName = event.state ? event.state.page : null;
-	if (componentName) {
-	  loadComponent(componentName);
-	}
-  });
+    const componentName = event.state ? event.state.page : 'home'; // Default to home if no state
+    console.log(`Navigating to: ${componentName}`);
+    window.loadComponent2(componentName, container); // Load the appropriate component
+});

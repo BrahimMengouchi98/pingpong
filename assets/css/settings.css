@@ -64,26 +64,30 @@
 }
 
 .settings-container .body-msg .profile-container .user .username,
-.settings-container .body-msg .profile-container .user .tow-factor {
+.settings-container .body-msg .profile-container .auth .tow-factor {
 	margin-top: 10px;
-	display: flex;
+	/* display: flex;
 	justify-content: space-evenly;
-	align-items: center;
+	align-items: center; */
 }
 
 .settings-container .body-msg .profile-container .user .username .name,
 .settings-container .body-msg .profile-container .auth .tow-factor .name{
-	/* display: inline-block; */
+	display: inline-block;
 }
 
 .settings-container .body-msg .profile-container .user .username a,
 .settings-container .body-msg .profile-container .auth .tow-factor a {
-	/* float: right; */
+	float: right;
 	text-transform: uppercase;
 	background-color: #4a19fe;
 	padding: 10px 20px;
 	border: 1px solid #15023c;
 	color: #fff;
+	width: 120px;
+	text-align: center;
+	margin-right: 100px
+
 }
 
 .settings-container .body-msg .profile-container .auth .tow-factor a{

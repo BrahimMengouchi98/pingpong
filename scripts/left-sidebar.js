@@ -297,7 +297,7 @@
 	clickOnImg.forEach((li, i) => {
 		li.addEventListener('click', ()=>{
 			//console.log(clickOnName[i].textContent);
-			console.log("hello");
+			
 			
 			window.loadComponent3(container, 'right-sidebar-component', clickOnName[i].textContent);
 		})
@@ -306,7 +306,6 @@
 	clickOnName.forEach((li, i) => {
 		li.addEventListener('click', ()=>{
 			//console.log(clickOnName[i].textContent);
-			console.log("hello");
 			
 			window.loadComponent3(container, 'right-sidebar-component', clickOnName[i].textContent);
 		})

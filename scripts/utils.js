@@ -366,9 +366,13 @@ window.loadComponent = function(container, componentName, option) {
 
   // Function to load the specified component
 window.loadComponent2 = function(componentName, container) {
+	
+	console.log("Component Name:", componentName);
+	
 	// Remove any existing component
-	const existingComponent = container.querySelector('game-component, sign-component, chat-component');
+	const existingComponent = container.querySelector('game-component, sign-component, chat-component, settings-component');
 	if (existingComponent) {
+		// console.log("hello2");
 	  existingComponent.remove();
 	}
   
@@ -379,21 +383,31 @@ window.loadComponent2 = function(componentName, container) {
 	    case 'game':
 			newComponent = document.createElement('game-component');
 			break;
+		case 'settings':
+			console.log("fuck");
+			newComponent = document.createElement('settings-component');
+			break;
 		case 'chat':
-			newComponent = document.createElement('chat-component');
+			console.log("fuck2");
 			containerName = ".chat-container";
-		break;
+			newComponent = document.createElement('chat-component');
+			break;
 		default:
-		return;
+			return;
 	}
   
-	// Append the new component to the container
-	container.appendChild(newComponent);
+	// If newComponent is defined, append it to the container
+    if (newComponent) {
+		container.appendChild(newComponent);
+	}
 	newComponent.addEventListener('content-loaded', () => {
 		// Access the HTML inside the component
 		//console.log(containerName);
-		const chat = newComponent.querySelector(containerName);
+		if (containerName == ".chat-container")
+		{
+			const chat = newComponent.querySelector(containerName);
+			chat.classList.add('active');
+		}
 		//console.log(sidebar); // This will log the <div class="sidebar"> element
-		chat.classList.add('active');
 	})
   };
