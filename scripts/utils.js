@@ -372,7 +372,7 @@ window.loadComponent2 = function(componentName, container) {
 	// Remove any existing component
 	const existingComponent = container.querySelector('game-component, sign-component, chat-component, settings-component');
 	if (existingComponent) {
-		// console.log("hello2");
+		console.log("yes");
 	  existingComponent.remove();
 	}
   
@@ -384,13 +384,12 @@ window.loadComponent2 = function(componentName, container) {
 			newComponent = document.createElement('game-component');
 			break;
 		case 'settings':
-			console.log("fuck");
 			newComponent = document.createElement('settings-component');
+			containerName = ".settings-container";
 			break;
 		case 'chat':
-			console.log("fuck2");
-			containerName = ".chat-container";
 			newComponent = document.createElement('chat-component');
+			containerName = ".chat-container";
 			break;
 		default:
 			return;
@@ -405,9 +404,10 @@ window.loadComponent2 = function(componentName, container) {
 		//console.log(containerName);
 		if (containerName == ".chat-container")
 		{
-			const chat = newComponent.querySelector(containerName);
-			chat.classList.add('active');
 		}
+		console.log("container name: " + containerName);
+		const chat = newComponent.querySelector(containerName);
+		chat.classList.add('active');
 		//console.log(sidebar); // This will log the <div class="sidebar"> element
 	})
   };

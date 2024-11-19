@@ -91,16 +91,18 @@
 	background-size: cover;
 	width: 35px;
 	height: 35px;
-  }
-  
-  /* navbar links on mouse-over */
-  .navbar .links-container .links li a:hover {
+	/* background-color: #911313; */
+}
+
+/* navbar links on mouse-over */
+.navbar .links-container .links li a:hover {
 	background-color: #000;
+	cursor: pointer;
   }
 
   /* Current/active navbar link */
-  .active {
-	/* background-color: #04AA6D; */
+  .navbar .links-container .links li a.active {
+	background-color: #04AA6D;
   }
 
   /* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */

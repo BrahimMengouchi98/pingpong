@@ -1,8 +1,13 @@
-const links = document.querySelectorAll('.navbar .links-container a');
+const links = document.querySelectorAll('.navbar .links-container .links li a');
 const container = document.querySelector('.container');
 
 links.forEach(element => {
 	element.addEventListener('click', (event) => {
+		
+		// Prevent the default link behavior
+		event.preventDefault(); 
+
+		console.log("element: " + element);
 		const active = document.querySelector('.navbar .links-container a.active');
 		// console.log(element);
 		// if (element.classList.contains('active'))
@@ -10,8 +15,6 @@ links.forEach(element => {
 		active.classList.remove('active');
 		element.classList.add('active');
 
-		// Prevent the default link behavior
-		event.preventDefault(); 
 
 		// Check if the clicked link is the "Game" link
 		if (element.parentElement.getAttribute('class') === 'game') {
@@ -35,7 +38,7 @@ links.forEach(element => {
 			}
 			else if (element.parentElement.getAttribute('class') === 'settings') {
 				// Check if the clicked link is the "Game" link  
-				console.log('Chat component will be added');
+				console.log('Settings component will be added');
 				  
 				  // Change the URL to /game without reloading the page
 				history.pushState({ page: 'settings' }, 'Settings', '/settings');
@@ -45,71 +48,6 @@ links.forEach(element => {
 				}
 	})
 });
-
-
-  
-//   let components = ['']
-//   function loadComponent2(componentName, nickname) {
-	
-// 	// Remove any existing component
-// 	const existingComponent = container.querySelector('game-component, sign-component, chat-component');
-// 	if (existingComponent) {
-// 	//   existingComponent.remove();
-// 	}
-  
-// 	// Create a new component based on the componentName
-// 	let newComponent;
-// 	let containerName;
-// 	switch (componentName) {
-// 	    case 'game':
-// 			newComponent = document.createElement('game-component');
-// 			break;
-// 		case 'chat':
-// 			containerName = ".chat-container";
-// 			if (!existingComponent)
-// 			{
-// 				newComponent = document.createElement('chat-component');
-// 			}
-// 			else
-// 			{
-// 				newComponent = document.getElementsByTagName('chat-component')[0];
-// 				loadChat(newComponent, containerName, nickname);
-// 			}
-// 			break;	
-// 		default:
-// 		// return;
-// 	}
-  
-// 	// Append the new component to the container
-// 	if (!existingComponent)
-// 		container.appendChild(newComponent);
-// 		newComponent.addEventListener('content-loaded', () => {
-// 		if (containerName == ".chat-container")
-// 			loadChat(newComponent, containerName, nickname);
-// 	})
-//   }
-  	
-//   function loadChat(newComponent, containerName, nickname) {
-// 	// Access the HTML inside the component
-// 	const chat = newComponent.querySelector(containerName);
-// 	console.log(chat);
-// 	const friend_name = newComponent.children[0].children[0].children[0];
-// 	// const body_first_msg = newComponent.querySelector(`${containerName} .body-msg span.first-msg`);
-// 	// body_first_msg.remove();
-// 	// console.log(body_first_msg);
-// 	const input1 = friend_name.parentElement.nextElementSibling.nextElementSibling;
-// 	const input2 = friend_name.parentElement.nextElementSibling.nextElementSibling.nextElementSibling;
-// 	friend_name.innerHTML = nickname;
-// 	select_friend = newComponent.querySelector(`${containerName} .body-msg span.first-msg`);
-// 	if (select_friend)
-// 		select_friend.remove();
-// 	input1.style.display = 'none';
-// 	input2.style.display = 'block';
-// 	input2.children[1].innerHTML = 'Messaging ' + nickname;
-// 	if (!chat.classList.contains('active'))
-// 		chat.classList.add('active');
-// }
-
 
 //   // Listen for popstate events to handle back/forward navigation
 // window.addEventListener('popstate', (event) => {
