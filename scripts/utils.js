@@ -370,7 +370,7 @@ window.loadComponent2 = function(componentName, container) {
 	console.log("Component Name:", componentName);
 	
 	// Remove any existing component
-	const existingComponent = container.querySelector('game-component, sign-component, chat-component, settings-component');
+	const existingComponent = container.querySelector('game-component, sign-component, chat-component, settings-component, profile-component');
 	if (existingComponent) {
 		console.log("yes");
 	  existingComponent.remove();
@@ -390,6 +390,10 @@ window.loadComponent2 = function(componentName, container) {
 		case 'chat':
 			newComponent = document.createElement('chat-component');
 			containerName = ".chat-container";
+			break;
+		case 'profile':
+			containerName = ".profile-container";
+			newComponent = document.createElement('profile-component');
 			break;
 		default:
 			return;

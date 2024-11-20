@@ -1,7 +1,9 @@
 const routes = {
     "/": "home-component",
     "/chat": "chat-component",
-    "/settings": "settings-component"
+    "/settings": "settings-component",
+	"/profile": "profile-component",
+	"/game": "game-component"
 };
 
 function router() {
@@ -11,7 +13,7 @@ function router() {
 	console.log(path);
     const appContainer = document.querySelector(".container");
 
-	if (componentName === "notfound-component") {
+	if (componentName == "notfound-component") {
         // Create a "notfound-component" to show when the route is not found
         const notFoundComponent = document.createElement("div");
         notFoundComponent.innerHTML = "<h1>404 - Page Not Found</h1><p>The page you're looking for does not exist.</p>";
@@ -27,22 +29,27 @@ function router() {
     // const componentElement = document.createElement(componentName); // Create new component element
     //appContainer.appendChild(componentElement);
 	
-	if (componentName === "home-component")
+	if (componentName == "home-component")
 	{
 		console.log('eee');
 		//window.loadComponent2("chat", appContainer);
 	}
 	
-	else if (componentName === "settings-component")
+	else if (componentName == "settings-component")
 	{
 		console.log("setting");
 		window.loadComponent2("settings", appContainer);
 
 	}
-	else if (componentName === "chat-component")
+	else if (componentName == "chat-component")
 	{
 		console.log('sss');
 		window.loadComponent2("chat", appContainer);
+	}
+	else if (componentName == "profile-component")
+	{
+		console.log('sss');
+		window.loadComponent2("profile", appContainer);
 	}
 }
 

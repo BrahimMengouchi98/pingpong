@@ -45,7 +45,17 @@ links.forEach(element => {
 	  
 				  // Load the game component
 				 window.loadComponent2('settings', container);
-				}
+			}
+			else if (element.parentElement.getAttribute('class') === 'profile') {
+				// Check if the clicked link is the "Game" link  
+				console.log('Profile component will be added');
+					
+					// Change the URL to /game without reloading the page
+				history.pushState({ page: 'profile' }, 'Profile', '/profile');
+		
+					// Load the game component
+					window.loadComponent2('profile', container);
+			}
 	})
 });
 

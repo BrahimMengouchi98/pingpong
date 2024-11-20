@@ -13,6 +13,27 @@
 	border-radius: 20px;
 }
 
+.profile-container.active{
+	-webkit-animation: active 1s normal forwards; 
+	-moz-animation:    active 1s normal forwards;
+	-o-animation:      active 1s normal forwards;
+	/* height: 70px; */
+}
+
+/* .chat-container.leave{
+	-webkit-animation: leave 0.5s normal forwards;
+	-moz-animation:    leave 0.5s normal forwards;
+	-o-animation:      leave 0.5s normal forwards;
+} */
+
+
+/* The animation code */
+@keyframes active {
+	from  {top: 100%;}
+	to {top: calc(50% - 400px);}
+  }
+
+
 .profile-container .header{
 	width: 100%;
 	height: 20%;
@@ -154,6 +175,7 @@
 	width: 100%;
 	margin-top: 10px;
 	/* height: 100%; */
+	/* background-color: #15023c; */
 }
 
 
