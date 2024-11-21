@@ -2,7 +2,7 @@
 	padding: 0;
 	position: absolute;
 	width: 50%;
-	height: 800px;
+	height: 850px;
 	left: calc(50% - 25%);
 	top: calc(50% - 400px);
 	/* top:100%; */
@@ -92,9 +92,13 @@
 .profile-container .body .match-history{
 	border: 3px solid black;
 	border-radius: 20px;
-	padding: 20px;
+	padding: 10px 20px;
 	background-color: #d3c5e2;
 	height: 30%;
+}
+
+.profile-container .body .match-history .text {
+	height: 10%;
 }
 
 .profile-container .body .match-history .text .txt{
@@ -114,14 +118,15 @@
 }
 
 .profile-container .body .match-history .results{
-	margin-top: 10px;
+	margin: 10px 0;
 	display: flex;
-	/* align-items: center; */
-	/* justify-content: space-around; */
+	align-items: center; 
+	justify-content: space-around;
+	height: calc(90% - 20px);
 }
 
-.profile-container .body .match-history .match {
-	margin: 0 10px;
+.profile-container .body .match-history .results .match {
+	/* margin: 0 10px; */
 	padding: 5px;
 	text-align: center;
 }
@@ -160,6 +165,7 @@
 	float: left;
 	margin: 0 5px;
 	width: calc(50% - 10px);
+	height: 30%;
 }
 
 .profile-container .body .info-container .ranking .match-history .results{
@@ -174,10 +180,54 @@
 .profile-container .body .info-container .ranking .match-history.leader-board{
 	width: 100%;
 	margin-top: 10px;
-	/* height: 100%; */
+
+	height: calc(70% - 10px);
 	/* background-color: #15023c; */
 }
 
+.profile-container .body .info-container .ranking .match-history.leader-board .classement {
+	list-style-type:none;
+	/* height: 100%; */
+	/* background-color: #2542a1; */
+	margin-top: 10px;
+}
+
+.profile-container .body .info-container .ranking .match-history.leader-board .classement .player {
+	padding: 10px 20px;
+	margin: 5px 0;
+	border-radius: 10px;
+	background-color: #a0c8d2;
+	border: 3px solid black ;
+}
+
+.profile-container .body .info-container .ranking .match-history.leader-board .classement .player.you {
+	background-color: #eeefdf;
+}
+
+.profile-container .body .info-container .ranking .match-history.leader-board .classement span {
+	margin: 0 10px;
+	font-size: 21px;
+	color: #57789a;
+	font-weight:bolder;
+}
+
+.profile-container .body .info-container .ranking .match-history.leader-board .classement .player.you span {
+	color: #fbc775;
+}
+
+.profile-container .body .info-container .ranking .match-history.leader-board .classement .player.you span.you {
+	color: #93938f;
+}
+
+.profile-container .body .info-container .ranking .match-history.leader-board .classement span.name {
+	margin-left: 50px;
+	margin-right: 0;
+}
+
+.profile-container .body .info-container .ranking .match-history.leader-board .classement span.you {
+	margin: 0;
+	margin-left: 10px;
+}
 
 .circle-container {
 	display: flex;
